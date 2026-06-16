@@ -1,0 +1,57 @@
+HOW TO ADD PHOTOS TO THE GALLERY
+================================
+
+You no longer need to touch any code. Three steps:
+
+
+STEP 1 - Drop the photo into the right folder
+----------------------------------------------
+In GitHub Desktop: Repository menu > Show in Explorer.
+Open the "images" folder, then the folder for the category:
+
+   images\marquees          - theatre marquees
+   images\in-theatre         - standees & in-theatre displays
+   images\custom-displays    - wallscapes, window & lobby graphics
+   images\conventions        - convention / trade-show work
+   images\fulfillment        - warehouse & shipping
+
+Drag your photo into the matching folder.
+
+   IMPORTANT - the file name becomes the caption shown on the photo.
+   Name it in plain words, using dashes instead of spaces:
+
+      wicked-for-good-amc-burbank-16.jpg   ->   "Wicked For Good AMC Burbank 16"
+      f1-imax-amc-boston-common.jpg        ->   "F1 IMAX AMC Boston Common"
+
+   Common abbreviations (AMC, CMX, IMAX, XD, RPX, WB...) are capitalized
+   automatically. Stick to letters, numbers and dashes - no slashes or
+   weird symbols.
+
+
+STEP 2 - Double-click "Update Gallery.bat"
+------------------------------------------
+A small black window opens, lists the new photo(s) it added, and says Done.
+That's it - the photo is now in index.html.
+
+   (If Windows shows a blue "Windows protected your PC" box, click
+   "More info" then "Run anyway" - it's your own file.)
+
+
+STEP 3 - Publish it
+-------------------
+Back in GitHub Desktop:
+   1. Type a short summary like "Add new gallery photos"
+   2. Click "Commit to main"
+   3. Click "Push origin" at the top
+
+Your photos are now live.
+
+
+GOOD TO KNOW
+------------
+- Your existing photos and their captions are never changed - only new
+  ones get added.
+- Each run saves a backup as index.html.bak, just in case.
+- Deleting a photo from a folder and re-running removes it from the site too.
+- If a caption's wording isn't quite right, just rename the photo file and
+  run the tool again - or ask Claude to fix the wording.
