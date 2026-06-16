@@ -3,28 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QSM — Add Gallery Photo</title>
+<title>QSM — Add a Gallery Photo</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: #1a1a1a;
+    background: #262626;
     color: #fff;
     font-family: 'Archivo', sans-serif;
     min-height: 100vh;
     padding: 2rem 1rem;
   }
 
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-  }
+  .container { max-width: 680px; margin: 0 auto; }
 
-  header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
+  header { text-align: center; margin-bottom: 2.25rem; }
 
   header h1 {
     font-family: 'Bebas Neue', sans-serif;
@@ -33,28 +27,41 @@
     color: #fff;
   }
 
-  header p {
-    color: #aaa;
-    margin-top: .4rem;
-    font-size: .95rem;
-  }
+  header p { color: #aaa; margin-top: .4rem; font-size: .95rem; }
 
   .gold { color: #D4A437; }
 
   .card {
-    background: #262626;
+    background: #333333;
     border: 1px solid #3a3a3a;
     border-radius: 10px;
     padding: 2rem;
     margin-bottom: 1.5rem;
   }
 
+  .card.recommended { border-color: #B32025; }
+
   .card h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: .08em;
     color: #D4A437;
     margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+
+  .badge {
+    background: #B32025;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .25em .6em;
+    border-radius: 999px;
   }
 
   .field { margin-bottom: 1.25rem; }
@@ -78,10 +85,9 @@
     font-size: .82rem;
   }
 
-  input[type="text"],
-  select {
+  input[type="text"], select {
     width: 100%;
-    background: #333;
+    background: #262626;
     border: 1px solid #444;
     border-radius: 6px;
     color: #fff;
@@ -92,24 +98,16 @@
     outline: none;
   }
 
-  input[type="text"]:focus,
-  select:focus {
-    border-color: #B32025;
-  }
-
+  input[type="text"]:focus, select:focus { border-color: #B32025; }
   select option { background: #333; }
 
-  .steps {
-    counter-reset: step;
-    padding: 0;
-    list-style: none;
-  }
+  .steps { counter-reset: step; padding: 0; list-style: none; }
 
   .steps li {
     counter-increment: step;
     display: flex;
     gap: .85rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
     align-items: flex-start;
   }
 
@@ -128,10 +126,10 @@
     margin-top: .1rem;
   }
 
-  .steps li p { font-size: .9rem; line-height: 1.5; color: #ccc; }
+  .steps li p { font-size: .92rem; line-height: 1.55; color: #ddd; }
   .steps li strong { color: #fff; }
-  .steps li code {
-    background: #333;
+  .steps li code, p code {
+    background: #262626;
     border: 1px solid #444;
     border-radius: 4px;
     padding: .1em .4em;
@@ -139,6 +137,30 @@
     color: #D4A437;
     font-family: monospace;
   }
+
+  .example {
+    background: #262626;
+    border-left: 3px solid #D4A437;
+    border-radius: 4px;
+    padding: .7rem .9rem;
+    margin: .25rem 0 .25rem 0;
+    font-size: .85rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  .example code { color: #fff; }
+  .example .arrow { color: #D4A437; margin: 0 .4rem; }
+
+  .note {
+    background: #2a2000;
+    border: 1px solid #5a4000;
+    border-radius: 6px;
+    padding: .8rem 1rem;
+    font-size: .85rem;
+    color: #e8c468;
+    line-height: 1.55;
+  }
+  .note strong { color: #f0d68a; }
 
   .btn {
     display: block;
@@ -159,13 +181,31 @@
 
   .btn:hover { background: #C62828; }
 
-  .output-section {
-    display: none;
+  details.manual {
+    background: #333333;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
   }
 
-  .output-section.visible {
-    display: block;
+  details.manual > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1.25rem 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: .08em;
+    color: #aaa;
   }
+  details.manual > summary::-webkit-details-marker { display: none; }
+  details.manual > summary::before { content: '▸ '; color: #B32025; }
+  details.manual[open] > summary::before { content: '▾ '; }
+  details.manual > summary:hover { color: #fff; }
+  details.manual .manual-body { padding: 0 2rem 2rem; }
+
+  .output-section { display: none; }
+  .output-section.visible { display: block; }
 
   .code-block {
     background: #1a1a1a;
@@ -176,17 +216,17 @@
     font-size: .82rem;
     line-height: 1.6;
     color: #ccc;
-    white-space: pre;
     overflow-x: auto;
-    word-break: break-all;
     white-space: pre-wrap;
+    word-break: break-all;
+    margin-top: 1rem;
   }
 
   .copy-btn {
     display: inline-flex;
     align-items: center;
     gap: .4rem;
-    background: #333;
+    background: #262626;
     border: 1px solid #555;
     border-radius: 6px;
     color: #fff;
@@ -199,133 +239,112 @@
     margin-top: .75rem;
   }
 
-  .copy-btn:hover { background: #444; border-color: #666; }
+  .copy-btn:hover { background: #3a3a3a; border-color: #666; }
   .copy-btn.copied { background: #1a4a1a; border-color: #2d8a2d; color: #6fdb6f; }
 
-  .success-banner {
-    display: none;
-    background: #1a3a1a;
-    border: 1px solid #2d6a2d;
-    border-radius: 8px;
-    color: #7ddb7d;
-    font-size: .9rem;
-    padding: .85rem 1.1rem;
-    margin-bottom: 1.25rem;
-    align-items: center;
-    gap: .6rem;
-  }
-
-  .success-banner.visible {
-    display: flex;
-  }
-
-  .path-hint {
-    background: #2a2000;
-    border: 1px solid #5a4000;
-    border-radius: 6px;
-    padding: .75rem 1rem;
-    font-size: .85rem;
-    color: #D4A437;
-    margin-bottom: 1rem;
-  }
-
-  .path-hint strong { color: #e8b84b; }
-
-  footer {
-    text-align: center;
-    color: #555;
+  .subhead {
     font-size: .8rem;
-    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #D4A437;
+    font-weight: 600;
+    margin: 1.5rem 0 .75rem;
   }
+
+  footer { text-align: center; color: #555; font-size: .8rem; margin-top: 2rem; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <header>
-    <h1>QSM <span class="gold">Gallery</span> Photo Tool</h1>
-    <p>Fill in the details below to get code you can paste into index.html</p>
+    <h1>QSM <span class="gold">Gallery</span> — Add a Photo</h1>
+    <p>The easy way: drop the photo in, double-click one file, push.</p>
   </header>
 
-  <!-- Step 1: Upload reminder -->
-  <div class="card">
-    <h2>Step 1 — Add your photo to the site folder</h2>
+  <!-- The recommended one-click flow -->
+  <div class="card recommended">
+    <h2>Add a photo <span class="badge">Recommended</span></h2>
     <ol class="steps">
-      <li><p>On your computer, open the folder that holds your website files — the one with <code>index.html</code> and an <code>images</code> folder inside it</p></li>
-      <li><p>Open the <code>images</code> folder, then the subfolder for the right category (e.g. <code>images/marquees/</code>)</p></li>
-      <li><p>Drop your photo in there. Keep the filename simple — no spaces (use hyphens instead). Example: <code>hunger-games-arclight.jpg</code></p></li>
+      <li><p>In <strong>GitHub Desktop</strong>, go to <strong>Repository &rsaquo; Show in Explorer</strong>. Open the <code>images</code> folder, then the subfolder for the category:<br>
+        <code>marquees</code> · <code>in-theatre</code> · <code>custom-displays</code> · <code>conventions</code> · <code>fulfillment</code></p></li>
+      <li><p>Drop your photo into that folder. <strong>The file name becomes the caption</strong>, so name it in plain words with dashes instead of spaces:</p></li>
     </ol>
-  </div>
-
-  <!-- Step 2: Fill in details -->
-  <div class="card">
-    <h2>Step 2 — Fill in the photo details</h2>
-
-    <div class="field">
-      <label>Filename <span class="hint">exactly as saved, including extension</span></label>
-      <input type="text" id="filename" placeholder="e.g. hunger-games-arclight.jpg" autocomplete="off">
+    <div class="example">
+      <code>wicked-for-good-amc-burbank-16.jpg</code><span class="arrow">→</span>"Wicked For Good AMC Burbank 16"<br>
+      <code>f1-imax-amc-boston-common.jpg</code><span class="arrow">→</span>"F1 IMAX AMC Boston Common"
     </div>
-
-    <div class="field">
-      <label>Category</label>
-      <select id="category">
-        <option value="marquees">Marquees</option>
-        <option value="in-theatre">In-Theatre Displays</option>
-        <option value="custom-displays">Custom Displays</option>
-        <option value="conventions">Conventions</option>
-        <option value="fulfillment">Fulfillment</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label>Caption <span class="hint">shown when hovering over the photo</span></label>
-      <input type="text" id="caption" placeholder="e.g. The Hunger Games — ArcLight Hollywood Marquee" autocomplete="off">
-    </div>
-
-    <div class="field">
-      <label>Short description <span class="hint">for screen readers / accessibility (can be the same as caption)</span></label>
-      <input type="text" id="alttext" placeholder="e.g. Hunger Games marquee installation at ArcLight Hollywood" autocomplete="off">
-    </div>
-
-    <button class="btn" onclick="generate()">Generate code snippet →</button>
-  </div>
-
-  <!-- Output -->
-  <div class="output-section" id="outputSection">
-    <div class="success-banner visible" id="successBanner">
-      <span>✓</span> Your snippet is ready. Follow the steps below to add it to the site.
-    </div>
-
-    <div class="card">
-      <h2>Step 3 — Copy this code</h2>
-      <div class="code-block" id="codeOutput"></div>
-      <button class="copy-btn" id="copyBtn" onclick="copyCode()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        Copy to clipboard
-      </button>
-    </div>
-
-    <div class="card">
-      <h2>Step 4 — Paste it into index.html</h2>
-      <ol class="steps">
-        <li><p>In your site folder, open <code>index.html</code> in a text editor (Notepad, VS Code, etc.)</p></li>
-        <li><p>Press <strong>Ctrl+F</strong> and search for: <code id="searchHint"></code></p></li>
-        <li><p>Paste your snippet <strong>just before</strong> that line (or after the last photo in the same category)</p></li>
-        <li><p>Save the file</p></li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h2>Step 5 — Publish it on Netlify</h2>
-      <div class="path-hint">Your photo only goes live after this step. Make sure you saved <strong>index.html</strong> first.</div>
-      <ol class="steps">
-        <li><p>Go to <strong>app.netlify.com</strong> and open your site</p></li>
-        <li><p>Click the <strong>Deploys</strong> tab at the top</p></li>
-        <li><p>Drag your <strong>entire site folder</strong> onto the box that says <em>"Drag and drop your site folder here"</em></p></li>
-        <li><p>Wait a few seconds for it to say <strong>Published</strong> — your new photo is now live</p></li>
-      </ol>
+    <p style="font-size:.85rem;color:#999;margin:.5rem 0 1.25rem;">Common abbreviations (AMC, CMX, IMAX, XD, RPX, WB…) are capitalized automatically. Stick to letters, numbers and dashes.</p>
+    <ol class="steps" start="3" style="counter-reset: step 2;">
+      <li><p>Double-click <code>Update&nbsp;Gallery.bat</code>. A small window lists the photos it added and says <strong>Done</strong>. <span style="color:#999;">(If Windows shows a "protected your PC" box, click <em>More info → Run anyway</em> — it's your own file.)</span></p></li>
+      <li><p>Back in <strong>GitHub Desktop</strong>: type a summary, click <strong>Commit to main</strong>, then <strong>Push origin</strong>.</p></li>
+      <li><p>Open your live site and hard-refresh with <strong>Ctrl+F5</strong> to clear the cache. Your new photo is there.</p></li>
+    </ol>
+    <div class="note">
+      <strong>Safe by design:</strong> the tool only <em>adds</em> new photos — your existing photos and captions are never changed — and it saves a backup as <code>index.html.bak</code> each run. Removing a photo from a folder and re-running also removes it from the site.
     </div>
   </div>
+
+  <!-- Manual fallback -->
+  <details class="manual">
+    <summary>Manual method — only if you ever need it</summary>
+    <div class="manual-body">
+      <p style="font-size:.88rem;color:#bbb;line-height:1.55;margin-bottom:1.25rem;">
+        You normally won't need this. But if the tool isn't available, you can generate one photo's code below and paste it into <code>index.html</code> by hand.
+      </p>
+
+      <div class="field">
+        <label>Filename <span class="hint">exactly as saved, including extension</span></label>
+        <input type="text" id="filename" placeholder="e.g. hunger-games-arclight.jpg" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label>Category</label>
+        <select id="category">
+          <option value="marquees">Marquees</option>
+          <option value="in-theatre">In-Theatre Displays</option>
+          <option value="custom-displays">Custom Displays</option>
+          <option value="conventions">Conventions</option>
+          <option value="fulfillment">Fulfillment</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Caption <span class="hint">shown when hovering over the photo</span></label>
+        <input type="text" id="caption" placeholder="e.g. The Hunger Games — ArcLight Hollywood Marquee" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label>Short description <span class="hint">for screen readers (can match the caption)</span></label>
+        <input type="text" id="alttext" placeholder="e.g. Hunger Games marquee installation at ArcLight Hollywood" autocomplete="off">
+      </div>
+
+      <button class="btn" onclick="generate()">Generate code snippet →</button>
+
+      <div class="output-section" id="outputSection">
+        <div class="subhead">1 · Copy this code</div>
+        <div class="code-block" id="codeOutput"></div>
+        <button class="copy-btn" id="copyBtn" onclick="copyCode()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy to clipboard
+        </button>
+
+        <div class="subhead">2 · Paste it into index.html</div>
+        <ol class="steps">
+          <li><p>Make sure the photo file is already in the right <code>images</code> subfolder.</p></li>
+          <li><p>Open <code>index.html</code> in a text editor (Notepad, VS Code…).</p></li>
+          <li><p>Press <strong>Ctrl+F</strong> and find the line <code id="searchHint"></code> for the last photo in your category, then paste your snippet right after that photo's closing <code>&lt;/div&gt;</code> — but <strong>before</strong> the <code>&lt;!--GALLERY-AUTO-END--&gt;</code> line. Save.</p></li>
+        </ol>
+
+        <div class="subhead">3 · Publish it</div>
+        <ol class="steps">
+          <li><p>In <strong>GitHub Desktop</strong>: write a summary, click <strong>Commit to main</strong>, then <strong>Push origin</strong>.</p></li>
+          <li><p>Hard-refresh the live site with <strong>Ctrl+F5</strong>.</p></li>
+        </ol>
+        <div class="note">If you later run <code>Update Gallery.bat</code>, it will keep this hand-added photo — no need to redo it.</div>
+      </div>
+    </div>
+  </details>
 
   <footer>Quality Sign &amp; Marquee · Internal tool</footer>
 
@@ -339,6 +358,15 @@
     'conventions': 'images/conventions/',
     'fulfillment': 'images/fulfillment/'
   };
+  const categoryLabels = {
+    'marquees': 'Marquee',
+    'in-theatre': 'In-Theatre',
+    'custom-displays': 'Custom Display',
+    'conventions': 'Convention',
+    'fulfillment': 'Fulfillment'
+  };
+
+  function enc(s) { return encodeURIComponent(s).replace(/%2F/g, '/'); }
 
   function generate() {
     const filename = document.getElementById('filename').value.trim();
@@ -349,37 +377,29 @@
     if (!filename) { alert('Please enter the photo filename.'); return; }
     if (!caption) { alert('Please enter a caption.'); return; }
 
-    const folder = categoryFolders[category];
-    const src = folder + filename;
+    const src = categoryFolders[category] + encodeURIComponent(filename);
+    const label = categoryLabels[category];
 
     const snippet =
-`<div class="gallery-item" data-category="${category}" tabindex="0" role="button" aria-label="${alttext}">
-  <img src="${src}" loading="lazy"
-       alt="${alttext}"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-  <div class="gallery-placeholder" style="display:none"></div>
-  <div class="gallery-overlay"><span class="gallery-caption">${caption}</span></div>
-</div>`;
+`      <div class="gallery-item" data-category="${category}" tabindex="0" role="button" aria-label="${alttext}">
+        <img src="${src}" loading="lazy"
+             alt="${alttext}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          ${label}
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">${caption}</span></div>
+      </div>`;
 
     document.getElementById('codeOutput').textContent = snippet;
-
-    // Set search hint
-    const searchHints = {
-      'marquees': 'data-category="marquees"',
-      'in-theatre': 'data-category="in-theatre"',
-      'custom-displays': 'data-category="custom-displays"',
-      'conventions': 'data-category="conventions"',
-      'fulfillment': 'data-category="fulfillment"'
-    };
-    document.getElementById('searchHint').textContent = searchHints[category];
+    document.getElementById('searchHint').textContent = 'data-category="' + category + '"';
 
     document.getElementById('outputSection').classList.add('visible');
     document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Reset copy button
     const btn = document.getElementById('copyBtn');
     btn.classList.remove('copied');
-    btn.textContent = '';
     btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy to clipboard';
   }
 
@@ -396,11 +416,13 @@
     });
   }
 
-  // Auto-populate alt text from caption if left blank
-  document.getElementById('caption').addEventListener('blur', function() {
-    const alt = document.getElementById('alttext');
-    if (!alt.value.trim()) alt.value = this.value;
-  });
+  const capEl = document.getElementById('caption');
+  if (capEl) {
+    capEl.addEventListener('blur', function () {
+      const alt = document.getElementById('alttext');
+      if (!alt.value.trim()) alt.value = this.value;
+    });
+  }
 </script>
 </body>
 </html>
