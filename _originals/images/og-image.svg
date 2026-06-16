@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#262626"/>
+  <!-- Red accent bar left -->
+  <rect x="0" y="0" width="8" height="630" fill="#B32025"/>
+  <!-- Subtle gradient overlay -->
+  <defs>
+    <radialGradient id="glow" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#B32025" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#262626" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Logo / wordmark area -->
+  <!-- Gold decorative line -->
+  <rect x="80" y="160" width="60" height="3" fill="#D4A437"/>
+
+  <!-- Main headline -->
+  <text x="80" y="290" font-family="Georgia, 'Times New Roman', serif"
+        font-size="88" font-weight="bold" fill="#FFFFFF" letter-spacing="2">
+    QUALITY
+  </text>
+  <text x="80" y="375" font-family="Georgia, 'Times New Roman', serif"
+        font-size="72" font-weight="bold" fill="#D4A437" letter-spacing="2">
+    SIGN &amp; MARQUEE
+  </text>
+
+  <!-- Divider -->
+  <rect x="80" y="405" width="400" height="2" fill="rgba(255,255,255,0.2)"/>
+
+  <!-- Tagline -->
+  <text x="80" y="445" font-family="Arial, Helvetica, sans-serif"
+        font-size="24" fill="rgba(255,255,255,0.65)" letter-spacing="3">
+    THEATRICAL MARKETING · FULFILLMENT · CONVENTIONS
+  </text>
+  <text x="80" y="490" font-family="Arial, Helvetica, sans-serif"
+        font-size="20" fill="rgba(255,255,255,0.4)" letter-spacing="2">
+    SERVING STUDIOS NATIONWIDE SINCE 1974 · COVINA, CA
+  </text>
+
+  <!-- Red CTA badge -->
+  <rect x="80" y="530" width="280" height="52" rx="4" fill="#B32025"/>
+  <text x="220" y="563" font-family="Arial, Helvetica, sans-serif"
+        font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle"
+        letter-spacing="2">START A PROJECT</text>
+
+  <!-- Right side bulb decoration -->
+  <circle cx="1020" cy="200" r="18" fill="#D4A437" opacity="0.9"/>
+  <circle cx="1060" cy="200" r="14" fill="#333333" opacity="0.6"/>
+  <circle cx="1094" cy="200" r="18" fill="#D4A437" opacity="0.9"/>
+  <circle cx="1134" cy="200" r="14" fill="#333333" opacity="0.6"/>
+  <circle cx="1020" cy="240" r="14" fill="#333333" opacity="0.6"/>
+  <circle cx="1060" cy="240" r="18" fill="#D4A437" opacity="0.7"/>
+  <circle cx="1094" cy="240" r="14" fill="#333333" opacity="0.6"/>
+  <circle cx="1134" cy="240" r="18" fill="#D4A437" opacity="0.8"/>
+
+  <!-- Domain -->
+  <text x="1120" y="610" font-family="Arial, Helvetica, sans-serif"
+        font-size="16" fill="rgba(255,255,255,0.3)" text-anchor="end">
+    qualitysignandmarquee.com
+  </text>
+</svg>

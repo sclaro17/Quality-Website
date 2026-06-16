@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QSM — Add Gallery Photo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: .05em;
+    color: #fff;
+  }
+
+  header p {
+    color: #aaa;
+    margin-top: .4rem;
+    font-size: .95rem;
+  }
+
+  .gold { color: #D4A437; }
+
+  .card {
+    background: #262626;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .08em;
+    color: #D4A437;
+    margin-bottom: 1.25rem;
+  }
+
+  .field { margin-bottom: 1.25rem; }
+
+  label {
+    display: block;
+    font-size: .85rem;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: .4rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  label .hint {
+    font-weight: 400;
+    color: #777;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: .4rem;
+    font-size: .82rem;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    font-size: .95rem;
+    padding: .65rem .85rem;
+    transition: border-color .15s;
+    outline: none;
+  }
+
+  input[type="text"]:focus,
+  select:focus {
+    border-color: #B32025;
+  }
+
+  select option { background: #333; }
+
+  .steps {
+    counter-reset: step;
+    padding: 0;
+    list-style: none;
+  }
+
+  .steps li {
+    counter-increment: step;
+    display: flex;
+    gap: .85rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .steps li::before {
+    content: counter(step);
+    background: #B32025;
+    color: #fff;
+    font-weight: 700;
+    font-size: .8rem;
+    border-radius: 50%;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .1rem;
+  }
+
+  .steps li p { font-size: .9rem; line-height: 1.5; color: #ccc; }
+  .steps li strong { color: #fff; }
+  .steps li code {
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: .1em .4em;
+    font-size: .85em;
+    color: #D4A437;
+    font-family: monospace;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    background: #B32025;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .85rem 1.5rem;
+    cursor: pointer;
+    transition: background .15s;
+    text-align: center;
+    margin-top: .5rem;
+  }
+
+  .btn:hover { background: #C62828; }
+
+  .output-section {
+    display: none;
+  }
+
+  .output-section.visible {
+    display: block;
+  }
+
+  .code-block {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: .82rem;
+    line-height: 1.6;
+    color: #ccc;
+    white-space: pre;
+    overflow-x: auto;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    font-size: .85rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+    margin-top: .75rem;
+  }
+
+  .copy-btn:hover { background: #444; border-color: #666; }
+  .copy-btn.copied { background: #1a4a1a; border-color: #2d8a2d; color: #6fdb6f; }
+
+  .success-banner {
+    display: none;
+    background: #1a3a1a;
+    border: 1px solid #2d6a2d;
+    border-radius: 8px;
+    color: #7ddb7d;
+    font-size: .9rem;
+    padding: .85rem 1.1rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+    gap: .6rem;
+  }
+
+  .success-banner.visible {
+    display: flex;
+  }
+
+  .path-hint {
+    background: #2a2000;
+    border: 1px solid #5a4000;
+    border-radius: 6px;
+    padding: .75rem 1rem;
+    font-size: .85rem;
+    color: #D4A437;
+    margin-bottom: 1rem;
+  }
+
+  .path-hint strong { color: #e8b84b; }
+
+  footer {
+    text-align: center;
+    color: #555;
+    font-size: .8rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>QSM <span class="gold">Gallery</span> Photo Tool</h1>
+    <p>Fill in the details below to get code you can paste into index.html</p>
+  </header>
+
+  <!-- Step 1: Upload reminder -->
+  <div class="card">
+    <h2>Step 1 — Add your photo to the site folder</h2>
+    <ol class="steps">
+      <li><p>On your computer, open the folder that holds your website files — the one with <code>index.html</code> and an <code>images</code> folder inside it</p></li>
+      <li><p>Open the <code>images</code> folder, then the subfolder for the right category (e.g. <code>images/marquees/</code>)</p></li>
+      <li><p>Drop your photo in there. Keep the filename simple — no spaces (use hyphens instead). Example: <code>hunger-games-arclight.jpg</code></p></li>
+    </ol>
+  </div>
+
+  <!-- Step 2: Fill in details -->
+  <div class="card">
+    <h2>Step 2 — Fill in the photo details</h2>
+
+    <div class="field">
+      <label>Filename <span class="hint">exactly as saved, including extension</span></label>
+      <input type="text" id="filename" placeholder="e.g. hunger-games-arclight.jpg" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>Category</label>
+      <select id="category">
+        <option value="marquees">Marquees</option>
+        <option value="in-theatre">In-Theatre Displays</option>
+        <option value="custom-displays">Custom Displays</option>
+        <option value="conventions">Conventions</option>
+        <option value="fulfillment">Fulfillment</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Caption <span class="hint">shown when hovering over the photo</span></label>
+      <input type="text" id="caption" placeholder="e.g. The Hunger Games — ArcLight Hollywood Marquee" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>Short description <span class="hint">for screen readers / accessibility (can be the same as caption)</span></label>
+      <input type="text" id="alttext" placeholder="e.g. Hunger Games marquee installation at ArcLight Hollywood" autocomplete="off">
+    </div>
+
+    <button class="btn" onclick="generate()">Generate code snippet →</button>
+  </div>
+
+  <!-- Output -->
+  <div class="output-section" id="outputSection">
+    <div class="success-banner visible" id="successBanner">
+      <span>✓</span> Your snippet is ready. Follow the steps below to add it to the site.
+    </div>
+
+    <div class="card">
+      <h2>Step 3 — Copy this code</h2>
+      <div class="code-block" id="codeOutput"></div>
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy to clipboard
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Step 4 — Paste it into index.html</h2>
+      <ol class="steps">
+        <li><p>In your site folder, open <code>index.html</code> in a text editor (Notepad, VS Code, etc.)</p></li>
+        <li><p>Press <strong>Ctrl+F</strong> and search for: <code id="searchHint"></code></p></li>
+        <li><p>Paste your snippet <strong>just before</strong> that line (or after the last photo in the same category)</p></li>
+        <li><p>Save the file</p></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Step 5 — Publish it on Netlify</h2>
+      <div class="path-hint">Your photo only goes live after this step. Make sure you saved <strong>index.html</strong> first.</div>
+      <ol class="steps">
+        <li><p>Go to <strong>app.netlify.com</strong> and open your site</p></li>
+        <li><p>Click the <strong>Deploys</strong> tab at the top</p></li>
+        <li><p>Drag your <strong>entire site folder</strong> onto the box that says <em>"Drag and drop your site folder here"</em></p></li>
+        <li><p>Wait a few seconds for it to say <strong>Published</strong> — your new photo is now live</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>Quality Sign &amp; Marquee · Internal tool</footer>
+
+</div>
+
+<script>
+  const categoryFolders = {
+    'marquees': 'images/marquees/',
+    'in-theatre': 'images/in-theatre/',
+    'custom-displays': 'images/custom-displays/',
+    'conventions': 'images/conventions/',
+    'fulfillment': 'images/fulfillment/'
+  };
+
+  function generate() {
+    const filename = document.getElementById('filename').value.trim();
+    const category = document.getElementById('category').value;
+    const caption = document.getElementById('caption').value.trim();
+    const alttext = document.getElementById('alttext').value.trim() || caption;
+
+    if (!filename) { alert('Please enter the photo filename.'); return; }
+    if (!caption) { alert('Please enter a caption.'); return; }
+
+    const folder = categoryFolders[category];
+    const src = folder + filename;
+
+    const snippet =
+`<div class="gallery-item" data-category="${category}" tabindex="0" role="button" aria-label="${alttext}">
+  <img src="${src}" loading="lazy"
+       alt="${alttext}"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="gallery-placeholder" style="display:none"></div>
+  <div class="gallery-overlay"><span class="gallery-caption">${caption}</span></div>
+</div>`;
+
+    document.getElementById('codeOutput').textContent = snippet;
+
+    // Set search hint
+    const searchHints = {
+      'marquees': 'data-category="marquees"',
+      'in-theatre': 'data-category="in-theatre"',
+      'custom-displays': 'data-category="custom-displays"',
+      'conventions': 'data-category="conventions"',
+      'fulfillment': 'data-category="fulfillment"'
+    };
+    document.getElementById('searchHint').textContent = searchHints[category];
+
+    document.getElementById('outputSection').classList.add('visible');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Reset copy button
+    const btn = document.getElementById('copyBtn');
+    btn.classList.remove('copied');
+    btn.textContent = '';
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy to clipboard';
+  }
+
+  function copyCode() {
+    const code = document.getElementById('codeOutput').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.classList.add('copied');
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy to clipboard';
+      }, 2500);
+    });
+  }
+
+  // Auto-populate alt text from caption if left blank
+  document.getElementById('caption').addEventListener('blur', function() {
+    const alt = document.getElementById('alttext');
+    if (!alt.value.trim()) alt.value = this.value;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Sign &amp; Marquee — Theatrical Marketing, Fulfillment &amp; Convention Services Since 1974</title>
+  <meta name="description" content="Quality Sign &amp; Marquee — nationwide theatrical marketing, fulfillment, and convention services since 1974. Marquees, in-theatre displays, custom displays, fulfillment, and white glove convention services.">
+  <meta property="og:title" content="Quality Sign &amp; Marquee">
+  <meta property="og:description" content="Where quality meets commitment. Serving major, mini-major, and independent studios since 1974.">
+  <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://qualitysignandmarquee.com/">
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <!-- Open Graph / Social -->
+  <meta property="og:url" content="https://qualitysignandmarquee.com/">
+  <meta property="og:image" content="https://qualitysignandmarquee.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Quality Sign &amp; Marquee — Theatrical Marketing, Fulfillment &amp; Convention Services Since 1974">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://qualitysignandmarquee.com/images/og-image.png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --nav-bg:    #333333;
+      --dark:      #262626;
+      --red:       #B32025;
+      --red-hover: #C62828;
+      --gold:      #D4A437;
+      --white:     #FFFFFF;
+      --card-bg:   #333333;
+      --section-alt: #2b2b2b; /* alt section grey — darker than nav so the sticky header never blends in */
+      --body-bg:   #262626;
+    }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: 'Archivo', sans-serif; }
+    a:focus-visible, button:focus-visible,
+    input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold); outline-offset: 2px;
+    }
+
+    /* ── Scroll reveal (added via JS — no-JS visitors see everything) ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── Skip Link ── */
+    .skip-link {
+      position: absolute; top: -40px; left: 0;
+      background: var(--red); color: var(--white);
+      padding: .5rem 1rem; z-index: 10000;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── Nav ── */
+    #nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--nav-bg);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .85rem; font-weight: 500; letter-spacing: .04em;
+      text-transform: uppercase; color: rgba(255,255,255,.8);
+      transition: color .2s;
+      padding: .25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible,
+    .nav-links a.active {
+      color: var(--white);
+      border-bottom-color: var(--gold);
+    }
+    /* Shop temporarily disabled until B2 Sign ordering goes live.
+       To re-enable: swap the .nav-soon spans back to <a href="shop.html"> links. */
+    .nav-soon {
+      font-size: .85rem; font-weight: 500; letter-spacing: .04em;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+      padding: .25rem 0; cursor: default;
+    }
+    .footer-links .nav-soon { font-size: inherit; text-transform: none; letter-spacing: normal; font-weight: inherit; color: rgba(255,255,255,.35); }
+    .soon-tag {
+      font-size: .58em; letter-spacing: .1em; color: var(--gold);
+      vertical-align: super; margin-left: .3rem; text-transform: uppercase;
+    }
+    .nav-cta {
+      background: var(--red); color: var(--white) !important;
+      padding: .5rem 1.25rem !important;
+      border-radius: 3px;
+      border-bottom: none !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover, .nav-cta:focus-visible { background: var(--red-hover) !important; }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none; background: none; border: none; color: var(--white);
+      flex-direction: column; gap: 5px; padding: .5rem;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px; background: var(--white);
+      display: block; transition: .2s;
+    }
+    @media (max-width: 860px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--nav-bg); flex-direction: column; gap: 0;
+        padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0,0,0,.4);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block; padding: .75rem 0;
+        border-bottom: 1px solid rgba(255,255,255,.08) !important;
+      }
+      .nav-cta { display: inline-block; margin-top: .5rem; border: none !important; }
+    }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2b1a1a 60%, #1a1a1a 100%);
+      overflow: hidden;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(179,32,37,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(212,164,55,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-eyebrow {
+      font-family: 'Archivo', sans-serif;
+      font-size: .78rem; font-weight: 600; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      max-width: 14ch;
+    }
+    .hero-headline em { font-style: normal; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,.75);
+      max-width: 52ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--red); color: var(--white);
+      padding: .85rem 2rem; border-radius: 3px;
+      font-size: .95rem; font-weight: 600; letter-spacing: .04em;
+      transition: background .2s, transform .15s;
+      border: none;
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      background: var(--red-hover); transform: translateY(-1px);
+    }
+    .btn-ghost {
+      display: inline-block;
+      background: transparent; color: var(--white);
+      padding: .85rem 2rem; border-radius: 3px;
+      font-size: .95rem; font-weight: 600; letter-spacing: .04em;
+      border: 2px solid rgba(255,255,255,.35);
+      transition: border-color .2s, transform .15s;
+    }
+    .btn-ghost:hover, .btn-ghost:focus-visible {
+      border-color: var(--white); transform: translateY(-1px);
+    }
+    .hero-promise {
+      margin-top: 2.25rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: .9rem; font-style: italic;
+      color: rgba(212,164,55,.7);
+      letter-spacing: .03em;
+    }
+
+    /* ── Marquee bulb strip under hero ── */
+    .hero-bulbs {
+      background: #1a1a1a;
+      padding: 1.35rem 1rem;
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .hero-bulbs .bulb-strip { padding: 0; }
+
+    /* ── Hero quick paths ── */
+    .hero-paths { margin-top: 2.5rem; }
+    .hero-paths-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: rgba(255,255,255,.45);
+      margin-bottom: .7rem;
+    }
+    .hero-paths-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .hero-path {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: rgba(51,51,51,.85);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.85);
+      padding: .55rem 1.05rem; border-radius: 3px;
+      font-size: .8rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+    .hero-path::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .hero-path:hover, .hero-path:focus-visible {
+      border-color: var(--gold); color: var(--white); transform: translateY(-1px);
+    }
+
+    /* ── Anchor offset for sticky nav ── */
+    section[id], .service-card[id] { scroll-margin-top: 80px; }
+
+    /* ── Process (A to Z) ── */
+    #process { background: #1a1a1a; }
+    .bulb-strip {
+      display: flex; justify-content: center; gap: 16px;
+      padding: 0 0 2.5rem; flex-wrap: wrap;
+    }
+    .bulb {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: rgba(212,164,55,.85);
+      box-shadow: 0 0 6px rgba(212,164,55,.5);
+      animation: bulbChase 1.4s linear infinite;
+    }
+    .bulb:nth-child(2n) { animation-delay: .7s; }
+    @keyframes bulbChase {
+      0%, 100% { background: rgba(212,164,55,.18); box-shadow: none; }
+      50% { background: var(--gold); box-shadow: 0 0 9px rgba(212,164,55,.85); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bulb { animation: none; }
+    }
+    .process-screen {
+      position: relative;
+      background: linear-gradient(135deg, #232323 0%, #1e1e1e 100%);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+      padding: 3rem 2.5rem 3.5rem;
+      margin-top: 2.5rem;
+      min-height: 270px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .process-screen { grid-template-columns: 1fr; gap: 1.75rem; padding: 2rem 1.5rem 2.75rem; }
+      .process-media { order: -1; }
+    }
+    .process-stage { position: relative; z-index: 1; max-width: 60ch; }
+    .process-media {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #161616;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .process-media figure {
+      position: absolute; inset: 0; margin: 0;
+      opacity: 0; transition: opacity .35s ease;
+      pointer-events: none;
+    }
+    .process-media figure.active { opacity: 1; }
+    .process-media img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .media-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+      color: rgba(255,255,255,.3);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem; letter-spacing: .1em;
+      text-align: center;
+    }
+
+    /* ── Process scene illustrations ── */
+    .scene { width: 100%; height: 100%; display: block; }
+    .scene * { transform-box: fill-box; transform-origin: center; }
+    @keyframes scnSlideIn { 0% { transform: translateX(-90px); opacity: 0; } 15% { opacity: 1; } 55%, 100% { transform: translateX(0); opacity: 1; } }
+    @keyframes scnDraw { 0% { stroke-dashoffset: 600; } 70%, 100% { stroke-dashoffset: 0; } }
+    @keyframes scnSpin { to { transform: rotate(360deg); } }
+    @keyframes scnFlick { 0%, 100% { opacity: 0; } 10% { opacity: 1; } 25% { opacity: .2; } 40% { opacity: .9; } 55% { opacity: 0; } }
+    @keyframes scnFeed { 0% { transform: scaleY(.12); } 70%, 100% { transform: scaleY(1); } }
+    @keyframes scnDrop { 0% { transform: translateY(-80px); opacity: 0; } 25% { opacity: 1; } 60%, 100% { transform: translateY(0); opacity: 1; } }
+    @keyframes scnDash { to { stroke-dashoffset: -60; } }
+    @keyframes scnBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+    @keyframes scnBulb { 0%, 100% { opacity: .15; } 50% { opacity: 1; } }
+    @keyframes scnRise { 0% { transform: translateY(38px); opacity: 0; } 25% { opacity: 1; } 60%, 100% { transform: translateY(0); opacity: 1; } }
+    .anim-slidein { animation: scnSlideIn 4.5s ease-in-out infinite; }
+    .anim-draw { stroke-dasharray: 600; animation: scnDraw 4.5s ease-in-out infinite; }
+    .anim-spin { animation: scnSpin 1.6s linear infinite; }
+    .anim-flick { animation: scnFlick 1.6s linear infinite; }
+    .anim-feed { transform-origin: center top; animation: scnFeed 5s ease-in-out infinite; }
+    .anim-drop1 { animation: scnDrop 4.5s ease-in-out infinite; }
+    .anim-drop2 { animation: scnDrop 4.5s ease-in-out .6s infinite; }
+    .anim-dash { stroke-dasharray: 26 34; animation: scnDash 1.1s linear infinite; }
+    .anim-bob { animation: scnBob 2.2s ease-in-out infinite; }
+    .anim-bulb { animation: scnBulb 1.3s ease-in-out infinite; }
+    .anim-rise { animation: scnRise 5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .scene [class*="anim-"] { animation: none !important; transform: none; opacity: 1; }
+    }
+    .media-num {
+      position: absolute; bottom: .6rem; right: .9rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; line-height: 1;
+      color: var(--gold);
+      text-shadow: 0 1px 8px rgba(0,0,0,.8);
+      pointer-events: none;
+    }
+    .process-where {
+      display: inline-block;
+      font-size: .7rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(212,164,55,.35);
+      padding: .3rem .8rem; border-radius: 2px;
+      margin-bottom: 1.1rem;
+    }
+    .process-step-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      letter-spacing: .03em; line-height: 1;
+      margin-bottom: .85rem;
+    }
+    .process-step-desc {
+      font-size: 1rem; color: rgba(255,255,255,.72); line-height: 1.7;
+    }
+    .process-stage.fading { opacity: 0; transform: translateY(8px); }
+    .process-stage { transition: opacity .3s ease, transform .3s ease; }
+    .process-progress {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+      background: rgba(255,255,255,.07);
+    }
+    .process-progress-fill {
+      height: 100%; width: 0; background: var(--gold);
+    }
+    .process-progress-fill.running {
+      animation: procFill var(--proc-interval, 5s) linear forwards;
+    }
+    @keyframes procFill { from { width: 0; } to { width: 100%; } }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: .5rem; margin-top: 1.25rem;
+    }
+    @media (max-width: 900px) { .process-steps { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 540px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+    .process-step-btn {
+      background: transparent; border: none;
+      border-top: 2px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.5);
+      padding: .7rem .3rem .4rem; text-align: left;
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s, border-color .2s;
+    }
+    .process-step-btn .step-no {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem; letter-spacing: .08em;
+      color: rgba(212,164,55,.55);
+      margin-bottom: .15rem;
+    }
+    .process-step-btn:hover, .process-step-btn:focus-visible { color: var(--white); }
+    .process-step-btn.active {
+      color: var(--white); border-top-color: var(--gold);
+    }
+    .process-step-btn.active .step-no { color: var(--gold); }
+    .process-footnote {
+      margin-top: 2rem; font-size: .88rem;
+      color: rgba(255,255,255,.5); font-style: italic;
+    }
+
+    /* ── Service steps & CTA ── */
+    .service-steps {
+      margin-top: 1.25rem; list-style: none;
+      counter-reset: svc;
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .service-steps li {
+      counter-increment: svc;
+      display: flex; gap: .65rem; align-items: baseline;
+      font-size: .87rem; color: rgba(255,255,255,.68); line-height: 1.5;
+    }
+    .service-steps li::before {
+      content: counter(svc, decimal-leading-zero);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: .95rem; letter-spacing: .05em;
+      color: var(--gold); flex-shrink: 0; min-width: 1.4rem;
+    }
+    .service-cta {
+      display: inline-block; margin-top: 1.4rem;
+      font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--white);
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 3px;
+      transition: border-color .2s;
+    }
+    .service-cta:hover, .service-cta:focus-visible { border-bottom-color: var(--red-hover); }
+    .service-card:target { border-top-color: var(--gold); }
+
+    /* ── Stats Bar ── */
+    #stats {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .8rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.6);
+      margin-top: .4rem;
+    }
+
+    /* ── Section Shared ── */
+    .section-pad { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .eyebrow {
+      font-size: .75rem; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      letter-spacing: .03em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-size: 1.05rem; color: rgba(255,255,255,.7);
+      max-width: 58ch; line-height: 1.65;
+    }
+
+    /* ── Gallery ── */
+    #gallery { background: var(--dark); }
+    .filter-bar {
+      display: flex; gap: .5rem; flex-wrap: wrap;
+      margin: 2rem 0 1rem;
+    }
+    .gallery-note {
+      font-size: .9rem; font-style: italic;
+      color: rgba(255,255,255,.55);
+      margin: 0 0 2rem;
+    }
+    .gallery-note strong { color: var(--gold); font-style: normal; font-weight: 600; }
+    .filter-btn {
+      background: var(--card-bg); color: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: .45rem 1.1rem; border-radius: 3px;
+      font-size: .82rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .filter-btn:hover, .filter-btn:focus-visible {
+      color: var(--white); border-color: rgba(255,255,255,.3);
+    }
+    .filter-btn.active {
+      background: var(--red); color: var(--white);
+      border-color: var(--red);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 4px;
+      aspect-ratio: 4/3;
+      background: #1e1e1e;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.06); }
+    .gallery-item:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.75) 100%);
+      display: flex; align-items: flex-end;
+      padding: 1rem;
+      opacity: 0; transition: opacity .25s;
+    }
+    .gallery-item:hover .gallery-overlay,
+    .gallery-item:focus-visible .gallery-overlay { opacity: 1; }
+    @media (hover: none) {
+      .gallery-overlay { opacity: 1; } /* touch screens: captions always visible */
+    }
+    .gallery-caption {
+      font-size: .85rem; font-weight: 600; color: var(--white);
+    }
+    .gallery-item[data-hidden="true"] { display: none; }
+
+    /* placeholder tile */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+      color: rgba(255,255,255,.25);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem; letter-spacing: .1em;
+      gap: .5rem;
+    }
+    .gallery-placeholder svg { opacity: .2; }
+
+    /* ── Lightbox ── */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 5000;
+      background: rgba(0,0,0,.92);
+      align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    .lb-inner {
+      position: relative; max-width: 90vw; max-height: 90vh;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(900px, 80vw);
+      max-height: 85vh;
+    }
+    #lb-img {
+      max-width: 100%; max-height: 85vh;
+      object-fit: contain; border-radius: 4px;
+      display: block;
+    }
+    .lb-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+      color: var(--white); padding: 1.5rem 1rem .75rem;
+      font-size: .9rem; font-weight: 600; border-radius: 0 0 4px 4px;
+    }
+    .lb-btn {
+      background: rgba(255,255,255,.12); border: none; color: var(--white);
+      width: 44px; height: 44px; border-radius: 50%;
+      font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+      flex-shrink: 0;
+    }
+    .lb-btn:hover, .lb-btn:focus-visible { background: rgba(255,255,255,.25); }
+    .lb-close {
+      position: absolute; top: -3rem; right: 0;
+      background: none; border: none; color: var(--white);
+      font-size: 1.75rem; line-height: 1; padding: .25rem .5rem;
+      transition: color .2s;
+    }
+    .lb-close:hover, .lb-close:focus-visible { color: var(--red); }
+    .lb-count {
+      position: absolute; top: -3rem; left: 0;
+      font-size: .85rem; font-weight: 600; letter-spacing: .12em;
+      color: rgba(255,255,255,.55);
+    }
+    .lb-placeholder {
+      width: 100%; height: 400px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #1e1e1e; border-radius: 4px;
+      color: rgba(255,255,255,.3); gap: .5rem;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;
+    }
+
+    /* ── Services ── */
+    #services { background: var(--dark); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 6px;
+      padding: 2rem;
+      border-top: 3px solid transparent;
+      transition: border-color .2s, transform .2s;
+    }
+    .service-card:hover {
+      border-top-color: var(--red); transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.35);
+    }
+    .service-icon {
+      width: 48px; height: 48px; margin-bottom: 1.25rem;
+      color: var(--gold);
+    }
+    .service-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem; letter-spacing: .05em;
+      margin-bottom: .75rem;
+    }
+    .service-desc {
+      font-size: .9rem; color: rgba(255,255,255,.65); line-height: 1.65;
+    }
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.25rem;
+    }
+    .service-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.07);
+      padding: .2rem .6rem; border-radius: 2px;
+    }
+
+    /* ── About / Timeline ── */
+    #about { background: var(--section-alt); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-body { font-size: 1rem; color: rgba(255,255,255,.75); line-height: 1.75; }
+    .about-body p + p { margin-top: 1rem; }
+    .about-highlights {
+      margin-top: 2rem;
+      display: flex; flex-direction: column; gap: .85rem;
+    }
+    .highlight-row {
+      display: flex; align-items: flex-start; gap: .85rem;
+    }
+    .highlight-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .highlight-text { font-size: .9rem; color: rgba(255,255,255,.7); }
+    .highlight-text strong { color: var(--white); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 7px; top: 6px; bottom: 6px;
+      width: 2px; background: rgba(255,255,255,.1);
+    }
+    .tl-item { position: relative; margin-bottom: 2.25rem; }
+    .tl-dot {
+      position: absolute; left: -1.65rem; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--dark); border: 2px solid var(--gold);
+    }
+    .tl-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem; letter-spacing: .08em; color: var(--gold);
+    }
+    .tl-desc {
+      font-size: .9rem; color: rgba(255,255,255,.65); line-height: 1.55; margin-top: .25rem;
+    }
+
+    /* ── Facility ── */
+    #facility { background: var(--dark); }
+    .facility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .facility-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .facility-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .facility-stat {
+      background: var(--card-bg);
+      border-radius: 6px; padding: 1.5rem;
+      text-align: center;
+    }
+    .facility-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem; color: var(--gold); line-height: 1;
+    }
+    .facility-stat-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.5);
+      margin-top: .4rem;
+    }
+    .facility-body { font-size: 1rem; color: rgba(255,255,255,.7); line-height: 1.75; }
+    .facility-body p + p { margin-top: 1rem; }
+    .facility-list {
+      margin-top: 1.5rem;
+      list-style: none;
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+    .facility-list li {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .9rem; color: rgba(255,255,255,.65);
+    }
+    .facility-list li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+
+    /* ── Sustainability ── */
+    #sustainability { background: #1f2420; }
+    .sustain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .sustain-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 6px; padding: 2rem;
+    }
+    .sustain-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .sustain-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem; letter-spacing: .05em; margin-bottom: .5rem;
+    }
+    .sustain-desc {
+      font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.6;
+    }
+
+    /* ── Contact ── */
+    #contact { background: var(--section-alt); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .contact-info { font-size: .95rem; color: rgba(255,255,255,.7); line-height: 1.65; }
+    .contact-info p + p { margin-top: .65rem; }
+    .contact-detail {
+      display: flex; align-items: center; gap: .75rem;
+      margin-top: 1.5rem;
+    }
+    .contact-detail + .contact-detail { margin-top: .85rem; }
+    .contact-detail svg { color: var(--gold); flex-shrink: 0; }
+    .contact-detail a { transition: color .2s; }
+    .contact-detail a:hover { color: var(--gold); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 580px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-group label {
+      font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.5);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--dark); color: var(--white);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 3px; padding: .75rem 1rem;
+      font-family: 'Archivo', sans-serif; font-size: .95rem;
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: var(--red);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-group select option { background: var(--dark); }
+    .btn-submit {
+      background: var(--red); color: var(--white);
+      border: none; padding: .9rem 2rem; border-radius: 3px;
+      font-size: 1rem; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase;
+      align-self: flex-start;
+      transition: background .2s, transform .15s;
+    }
+    .btn-submit:hover, .btn-submit:focus-visible {
+      background: var(--red-hover); transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a1a;
+      padding: 3.5rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    @media (max-width: 860px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    .footer-brand .nav-logo { font-size: 1.5rem; margin-bottom: .75rem; }
+    .footer-brand p {
+      font-size: .85rem; color: rgba(255,255,255,.4); line-height: 1.6;
+    }
+    .footer-col-title {
+      font-size: .72rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .footer-links a {
+      font-size: .875rem; color: rgba(255,255,255,.55);
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 2.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy {
+      font-size: .8rem; color: rgba(255,255,255,.3);
+    }
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social a {
+      color: rgba(255,255,255,.3); transition: color .2s;
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+    }
+    .footer-social a:hover { color: var(--white); }
+
+    /* ── Utility ── */
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="Quality Sign &amp; Marquee — home">
+    <img src="QualityLogo12.png" alt="Quality Sign &amp; Marquee">
+  </a>
+  <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#process">How We Work</a></li>
+    <li><a href="#gallery">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#facility">Facility</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
+    <li><span class="nav-soon" aria-disabled="true" title="Online ordering coming soon">Shop<span class="soon-tag">Soon</span></span></li>
+    <li><a href="#contact" class="nav-cta">Start a project</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
+<main id="main-content">
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Theatrical Marketing, Fulfillment &amp; Convention Services — Since 1974</p>
+    <h1 class="hero-headline">The First Thing<br>Audiences <em>See</em></h1>
+    <p class="hero-sub">
+      Posters, standees, marquees, and custom displays — designed, printed, installed, warehoused, and shipped for major, mini-major, and independent studios, all from one 50,000 sq ft facility in Covina, CA.
+    </p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn-primary">See the work</a>
+      <a href="#contact" class="btn-ghost">Start a project</a>
+    </div>
+    <nav class="hero-paths" aria-label="Jump to a service">
+      <p class="hero-paths-label">What brings you here?</p>
+      <div class="hero-paths-row">
+        <a class="hero-path" href="#svc-fulfillment">Fulfillment</a>
+        <a class="hero-path" href="#svc-marquees">Marquees</a>
+        <a class="hero-path" href="#svc-in-theatre">In-Theatre Displays</a>
+        <a class="hero-path" href="#svc-custom">Custom Displays</a>
+        <a class="hero-path" href="#svc-conventions">Conventions</a>
+      </div>
+    </nav>
+    <p class="hero-promise">Where quality meets commitment.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MARQUEE BULB STRIP ═══════════════════════════════ -->
+<div class="hero-bulbs" aria-hidden="true">
+  <div class="bulb-strip"></div>
+</div>
+
+<!-- ══════════════════════════════════════ STATS ══════════════════════════════════════ -->
+<section id="stats" aria-label="Key figures">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number" data-count="1974" data-grouping="false">1974</div>
+      <div class="stat-label">Founded</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="50" data-suffix="K">50K</div>
+      <div class="stat-label">Sq Ft Facility</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="5">5</div>
+      <div class="stat-label">Service Pillars</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Solar</div>
+      <div class="stat-label">Powered Facility</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Nationwide</div>
+      <div class="stat-label">Service Area</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PROCESS (A TO Z) ═════════════════════════════ -->
+<section id="process" class="section-pad" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <p class="eyebrow">How We Work</p>
+    <h2 class="section-title" id="process-heading">From Receiving to Opening Night</h2>
+    <p class="section-lead">
+      Every project moves through one building in Covina, CA — no subcontractors, no hand-offs, no surprises. Here's the whole process, A to Z.
+    </p>
+
+    <div class="process-screen">
+      <div class="process-stage" id="process-stage" aria-live="polite">
+        <span class="process-where" id="process-where">Receiving Dock</span>
+        <h3 class="process-step-title" id="process-title">We Receive</h3>
+        <p class="process-step-desc" id="process-desc">
+          Your materials arrive at our 50,000 sq ft facility. Everything is checked in, sorted, and logged the day it lands — so you know exactly what we have from hour one.
+        </p>
+      </div>
+      <div class="process-media" id="process-media" aria-hidden="true">
+        <figure class="active">
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <line x1="0" y1="232" x2="400" y2="232" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+              <rect x="262" y="36" width="138" height="196" fill="#2a2a2a" stroke="rgba(255,255,255,.12)"/>
+              <rect x="282" y="78" width="100" height="154" fill="#222222" stroke="rgba(212,164,55,.4)"/>
+              <line x1="282" y1="100" x2="382" y2="100" stroke="rgba(212,164,55,.18)"/>
+              <line x1="282" y1="122" x2="382" y2="122" stroke="rgba(212,164,55,.18)"/>
+              <line x1="282" y1="144" x2="382" y2="144" stroke="rgba(212,164,55,.18)"/>
+              <line x1="282" y1="166" x2="382" y2="166" stroke="rgba(212,164,55,.18)"/>
+              <rect x="196" y="196" width="44" height="36" fill="#2e2e2e" stroke="rgba(212,164,55,.5)"/>
+              <rect x="206" y="158" width="36" height="38" fill="#2e2e2e" stroke="rgba(212,164,55,.5)"/>
+              <g class="anim-slidein">
+                <rect x="84" y="224" width="76" height="8" fill="#241f15" stroke="rgba(212,164,55,.35)"/>
+                <rect x="94" y="178" width="56" height="46" fill="#2b2b2b" stroke="#D4A437"/>
+                <line x1="122" y1="178" x2="122" y2="224" stroke="#B32025" stroke-width="3"/>
+              </g>
+              <polyline points="30,210 44,200 30,190" fill="none" stroke="rgba(212,164,55,.35)" stroke-width="3"/>
+              <polyline points="50,210 64,200 50,190" fill="none" stroke="rgba(212,164,55,.55)" stroke-width="3"/>
+              <text x="30" y="60" font-family="'Bebas Neue', sans-serif" font-size="26" letter-spacing="3" fill="rgba(255,255,255,.35)">RECEIVING</text>
+            </svg>
+          </div>
+          <span class="media-num">01</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <rect x="56" y="44" width="288" height="212" fill="#21211f" stroke="rgba(255,255,255,.15)"/>
+              <line x1="56" y1="97" x2="344" y2="97" stroke="rgba(255,255,255,.05)"/>
+              <line x1="56" y1="150" x2="344" y2="150" stroke="rgba(255,255,255,.05)"/>
+              <line x1="56" y1="203" x2="344" y2="203" stroke="rgba(255,255,255,.05)"/>
+              <line x1="128" y1="44" x2="128" y2="256" stroke="rgba(255,255,255,.05)"/>
+              <line x1="200" y1="44" x2="200" y2="256" stroke="rgba(255,255,255,.05)"/>
+              <line x1="272" y1="44" x2="272" y2="256" stroke="rgba(255,255,255,.05)"/>
+              <path class="anim-draw" d="M96 196 h208 M96 196 l-14 -26 h236 l-14 26 M110 170 v-58 h180 v58 M124 128 h152" fill="none" stroke="#D4A437" stroke-width="2.5"/>
+              <line x1="96" y1="216" x2="304" y2="216" stroke="#B32025" stroke-width="1.5"/>
+              <line x1="96" y1="210" x2="96" y2="222" stroke="#B32025" stroke-width="1.5"/>
+              <line x1="304" y1="210" x2="304" y2="222" stroke="#B32025" stroke-width="1.5"/>
+              <text x="74" y="78" font-family="'Bebas Neue', sans-serif" font-size="22" letter-spacing="3" fill="rgba(255,255,255,.35)">LAYOUT &amp; DESIGN</text>
+            </svg>
+          </div>
+          <span class="media-num">02</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <line x1="0" y1="226" x2="400" y2="226" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+              <rect x="48" y="160" width="190" height="26" fill="#2d2417" stroke="rgba(212,164,55,.35)"/>
+              <line x1="68" y1="173" x2="218" y2="173" stroke="rgba(212,164,55,.18)"/>
+              <circle class="anim-spin" cx="252" cy="172" r="36" fill="#262626" stroke="#D4A437" stroke-width="4" stroke-dasharray="7 5"/>
+              <circle cx="252" cy="172" r="6" fill="#D4A437"/>
+              <line class="anim-flick" x1="226" y1="150" x2="208" y2="132" stroke="#B32025" stroke-width="2.5"/>
+              <line class="anim-flick" style="animation-delay:.4s" x1="230" y1="142" x2="220" y2="120" stroke="#C62828" stroke-width="2"/>
+              <line class="anim-flick" style="animation-delay:.8s" x1="222" y1="158" x2="198" y2="150" stroke="#B32025" stroke-width="2"/>
+              <rect x="306" y="118" width="14" height="108" fill="#2e2e2e" stroke="rgba(255,255,255,.18)" transform="rotate(8 313 172)"/>
+              <rect x="332" y="118" width="14" height="108" fill="#2e2e2e" stroke="rgba(255,255,255,.18)" transform="rotate(8 339 172)"/>
+              <text x="30" y="60" font-family="'Bebas Neue', sans-serif" font-size="26" letter-spacing="3" fill="rgba(255,255,255,.35)">WOOD &amp; METAL SHOP</text>
+            </svg>
+          </div>
+          <span class="media-num">03</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <g class="anim-feed">
+                <rect x="136" y="128" width="128" height="118" fill="#ECECEC"/>
+                <image href="QualityLogo12.png" x="146" y="150" width="108" height="51" preserveAspectRatio="xMidYMid meet"/>
+                <rect x="148" y="224" width="104" height="8" fill="#262626"/>
+              </g>
+              <rect x="84" y="64" width="232" height="68" rx="8" fill="#2e2e2e" stroke="rgba(255,255,255,.18)"/>
+              <rect x="120" y="124" width="160" height="10" fill="#1a1a1a"/>
+              <circle class="anim-bulb" cx="292" cy="86" r="5" fill="#D4A437"/>
+              <rect x="104" y="80" width="60" height="14" rx="2" fill="rgba(255,255,255,.1)"/>
+              <rect x="92" y="132" width="10" height="124" fill="#262626"/>
+              <rect x="298" y="132" width="10" height="124" fill="#262626"/>
+              <text x="30" y="44" font-family="'Bebas Neue', sans-serif" font-size="26" letter-spacing="3" fill="rgba(255,255,255,.35)">PRINT ROOM</text>
+            </svg>
+          </div>
+          <span class="media-num">04</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <line x1="0" y1="244" x2="400" y2="244" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+              <rect class="anim-drop1" x="158" y="118" width="22" height="58" rx="10" fill="#B32025"/>
+              <circle class="anim-drop2" cx="222" cy="146" r="20" fill="none" stroke="#D4A437" stroke-width="4"/>
+              <rect x="134" y="168" width="132" height="76" fill="#2b2b2b" stroke="#D4A437"/>
+              <polygon points="134,168 96,150 110,138 134,168" fill="#262626" stroke="rgba(212,164,55,.5)"/>
+              <polygon points="266,168 304,150 290,138 266,168" fill="#262626" stroke="rgba(212,164,55,.5)"/>
+              <line x1="200" y1="168" x2="200" y2="244" stroke="#B32025" stroke-width="3"/>
+              <rect x="296" y="196" width="48" height="48" fill="#2e2e2e" stroke="rgba(212,164,55,.4)"/>
+              <rect x="304" y="148" width="40" height="48" fill="#2e2e2e" stroke="rgba(212,164,55,.4)"/>
+              <text x="30" y="60" font-family="'Bebas Neue', sans-serif" font-size="26" letter-spacing="3" fill="rgba(255,255,255,.35)">ASSEMBLE &amp; PACK</text>
+            </svg>
+          </div>
+          <span class="media-num">05</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <line x1="0" y1="228" x2="400" y2="228" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+              <line class="anim-dash" x1="0" y1="252" x2="400" y2="252" stroke="rgba(212,164,55,.45)" stroke-width="3"/>
+              <g class="anim-bob">
+                <rect x="92" y="120" width="178" height="82" fill="#2e2e2e" stroke="rgba(255,255,255,.18)"/>
+                <line x1="92" y1="178" x2="270" y2="178" stroke="#D4A437" stroke-width="3"/>
+                <text x="116" y="162" font-family="'Bebas Neue', sans-serif" font-size="30" letter-spacing="4" fill="#D4A437">QSM</text>
+                <rect x="270" y="148" width="52" height="54" rx="5" fill="#2a2a2a" stroke="rgba(255,255,255,.18)"/>
+                <rect x="278" y="156" width="24" height="20" rx="2" fill="rgba(255,255,255,.14)"/>
+              </g>
+              <circle cx="130" cy="212" r="15" fill="#1a1a1a" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+              <circle cx="232" cy="212" r="15" fill="#1a1a1a" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+              <circle cx="300" cy="212" r="15" fill="#1a1a1a" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
+              <circle cx="130" cy="212" r="4" fill="rgba(212,164,55,.5)"/>
+              <circle cx="232" cy="212" r="4" fill="rgba(212,164,55,.5)"/>
+              <circle cx="300" cy="212" r="4" fill="rgba(212,164,55,.5)"/>
+              <text x="30" y="60" font-family="'Bebas Neue', sans-serif" font-size="26" letter-spacing="3" fill="rgba(255,255,255,.35)">NATIONWIDE SHIPPING</text>
+            </svg>
+          </div>
+          <span class="media-num">06</span>
+        </figure>
+        <figure>
+          <div class="media-placeholder" style="display:flex">
+            <svg class="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <clipPath id="qsm-board-clip"><rect x="96" y="84" width="208" height="46"/></clipPath>
+              </defs>
+              <rect width="400" height="300" fill="#1d1d1d"/>
+              <!-- building facade -->
+              <rect x="40" y="18" width="320" height="252" fill="#232323" stroke="rgba(255,255,255,.12)"/>
+              <line x1="40" y1="40" x2="360" y2="40" stroke="rgba(255,255,255,.07)"/>
+              <text x="166" y="36" font-family="'Bebas Neue', sans-serif" font-size="18" letter-spacing="6" fill="rgba(212,164,55,.55)">CINEMA</text>
+              <!-- ground -->
+              <line x1="0" y1="270" x2="400" y2="270" stroke="rgba(255,255,255,.16)" stroke-width="2"/>
+              <!-- canopy -->
+              <rect x="76" y="58" width="248" height="12" fill="#2e2e2e" stroke="rgba(255,255,255,.15)"/>
+              <!-- marquee board -->
+              <rect x="84" y="70" width="232" height="74" fill="#1c1c1c" stroke="#D4A437" stroke-width="1.5"/>
+              <!-- rising title, clipped inside the board -->
+              <g clip-path="url(#qsm-board-clip)">
+                <g class="anim-rise">
+                  <rect x="100" y="88" width="200" height="38" fill="#B32025"/>
+                  <text x="200" y="115" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="23" letter-spacing="3" fill="#FFFFFF">NOW SHOWING</text>
+                </g>
+              </g>
+              <!-- bulb rows along the board edges -->
+              <circle class="anim-bulb" cx="100" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.15s" cx="129" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.3s" cx="158" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.45s" cx="187" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.6s" cx="216" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.75s" cx="245" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.9s" cx="274" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:1.05s" cx="303" cy="77" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:1.05s" cx="100" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.9s" cx="129" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.75s" cx="158" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.6s" cx="187" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.45s" cx="216" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.3s" cx="245" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" style="animation-delay:.15s" cx="274" cy="137" r="4" fill="#D4A437"/>
+              <circle class="anim-bulb" cx="303" cy="137" r="4" fill="#D4A437"/>
+              <!-- warm glow under the marquee -->
+              <ellipse cx="200" cy="160" rx="130" ry="18" fill="rgba(212,164,55,.06)"/>
+              <!-- entry doors -->
+              <rect x="146" y="206" width="50" height="64" fill="#1b1b1b" stroke="rgba(255,255,255,.18)"/>
+              <rect x="204" y="206" width="50" height="64" fill="#1b1b1b" stroke="rgba(255,255,255,.18)"/>
+              <circle cx="188" cy="240" r="2.5" fill="#D4A437"/>
+              <circle cx="212" cy="240" r="2.5" fill="#D4A437"/>
+              <!-- leaning ladder -->
+              <line x1="312" y1="128" x2="292" y2="268" stroke="rgba(255,255,255,.35)" stroke-width="3.5"/>
+              <line x1="336" y1="128" x2="316" y2="268" stroke="rgba(255,255,255,.35)" stroke-width="3.5"/>
+              <line x1="308" y1="158" x2="332" y2="158" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+              <line x1="304" y1="186" x2="328" y2="186" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+              <line x1="300" y1="214" x2="324" y2="214" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+              <line x1="296" y1="242" x2="320" y2="242" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+            </svg>
+          </div>
+          <span class="media-num">07</span>
+        </figure>
+      </div>
+      <div class="process-progress" aria-hidden="true"><div class="process-progress-fill" id="process-fill"></div></div>
+    </div>
+
+    <div class="process-steps" id="process-steps" role="tablist" aria-label="Process steps">
+      <button class="process-step-btn active" role="tab" aria-selected="true"><span class="step-no">01</span>Receive</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">02</span>Design</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">03</span>Fabricate</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">04</span>Print</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">05</span>Pack</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">06</span>Ship</button>
+      <button class="process-step-btn" role="tab" aria-selected="false"><span class="step-no">07</span>Install</button>
+    </div>
+
+    <p class="process-footnote">One roof. One team. One schedule — since 1974.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ GALLERY ══════════════════════════════════════ -->
+<section id="gallery" class="section-pad" aria-label="Portfolio gallery">
+  <div class="section-inner">
+    <p class="eyebrow">Portfolio</p>
+    <h2 class="section-title">The Work</h2>
+    <p class="section-lead">
+      Five decades of marquees, displays, conventions, and fulfillment — built and shipped from one roof.
+    </p>
+
+    <div class="filter-bar" role="group" aria-label="Filter gallery by category">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="marquees">Marquees</button>
+      <button class="filter-btn" data-filter="in-theatre">In-Theatre</button>
+      <button class="filter-btn" data-filter="custom-displays">Custom Displays</button>
+      <button class="filter-btn" data-filter="conventions">Conventions</button>
+      <button class="filter-btn" data-filter="fulfillment">Fulfillment</button>
+    </div>
+
+    <p class="gallery-note" id="gallery-note" aria-live="polite"></p>
+
+        <div class="gallery-grid" id="gallery-grid" role="group" aria-label="Project photos">
+      <!-- Marquees -->
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Landmark Westwood marquee for The Killer">
+        <img src="images/marquees/marquee-landmark-westwood.jpg"
+             data-fallback="https://qualitysignandmarquee.com/wp-content/uploads/2023/12/The-Killer-Landmark-Westwood-scaled.jpg"
+             alt="The Killer — Landmark Westwood Marquee"
+             onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Killer — Landmark Westwood Marquee</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Leo marquee at Regency Bruin Theatre">
+        <img src="images/marquees/marquee-leo-regency-bruin.jpg"
+             data-fallback="https://qualitysignandmarquee.com/wp-content/uploads/2023/12/Leo-RegencyBruin-3.jpg"
+             alt="Leo — Regency Bruin Theatre Marquee"
+             onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Leo — Regency Bruin Theatre Marquee</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Logan film theatre marquee installation">
+        <img src="images/marquees/marquee-logan.jpg"
+             data-fallback="https://qualitysignandmarquee.com/wp-content/uploads/2015/12/Logan.jpg"
+             alt="Logan — Theatre Marquee"
+             onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Logan — Theatre Marquee</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" data-feature="1" tabindex="0" role="button" aria-label="Peaky Blinders The Immortal Man marquee at Landmark Westwood">
+        <img src="images/marquees/Landmark%20Westwood.jpg" loading="lazy"
+             alt="Peaky Blinders: The Immortal Man — Landmark Westwood Marquee"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Peaky Blinders: The Immortal Man — Landmark Westwood</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" data-feature="1" tabindex="0" role="button" aria-label="Your Place or Mine marquee at Regency Bruin Theatre">
+        <img src="images/marquees/Regency%20Bruin.jpg" loading="lazy"
+             alt="Your Place or Mine — Regency Bruin Theatre Marquee"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Your Place or Mine — Regency Bruin Theatre</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Your Place or Mine marquee at Westwood Village Theatre">
+        <img src="images/marquees/Village.jpg" loading="lazy"
+             alt="Your Place or Mine — Westwood Village Theatre Marquee"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Your Place or Mine — Westwood Village Theatre</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Los Feliz Theatre marquee and poster displays">
+        <img src="images/marquees/Los%20Feliz.jpeg" loading="lazy"
+             alt="Los Feliz Theatre — Marquee &amp; Poster Displays"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Los Feliz Theatre — Marquee &amp; Poster Displays</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Nuart Theatre marquee and banners">
+        <img src="images/marquees/Nuart.jpg" loading="lazy"
+             alt="Erupcja — Nuart Theatre Marquee &amp; Banners"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Erupcja — Nuart Theatre Marquee &amp; Banners</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="The Bay Theatre marquee at night">
+        <img src="images/marquees/The%20Bay%20Theater.jpg" loading="lazy"
+             alt="The Bay Theatre — Marquee at Night"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Bay Theatre — Marquee at Night</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="The Hunger Games Mockingjay Part 2 marquee billboard">
+        <img src="images/marquees/mockingjay-marquee.jpg" loading="lazy"
+             alt="The Hunger Games: Mockingjay Part 2 — Marquee Billboard"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Hunger Games: Mockingjay Part 2 — Marquee Billboard</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="marquees" tabindex="0" role="button" aria-label="Your Place or Mine marquee at Regency Bruin Theatre daytime">
+        <img src="images/marquees/your-place-or-mine-bruin-2.jpg" loading="lazy"
+             alt="Your Place or Mine — Regency Bruin Theatre Marquee, Day"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Marquee
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Your Place or Mine — Regency Bruin Marquee, Day</span></div>
+      </div>
+
+      <!-- In-Theatre Displays -->
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Standee installation at Ontario Mills">
+        <img src="images/in-theatre/standee-ontario-mills.jpg"
+             alt="Standee — Ontario Mills"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Standee — Ontario Mills</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" data-feature="1" tabindex="0" role="button" aria-label="Avatar Fire and Ash standee at AMC 34th Street 14 New York">
+        <img src="images/in-theatre/avatar-fire-and-ash-amc-34th-street.jpg" loading="lazy"
+             alt="Avatar: Fire and Ash — AMC 34th Street 14, New York"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Avatar: Fire and Ash — AMC 34th Street 14, New York</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" data-feature="1" tabindex="0" role="button" aria-label="F1 Dolby and IMAX displays at AMC Boston Common 19">
+        <img src="images/in-theatre/f1-amc-boston-common.jpg" loading="lazy"
+             alt="F1 — AMC Boston Common 19, Dolby &amp; IMAX"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">F1 — AMC Boston Common 19, Dolby &amp; IMAX</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Jurassic World Rebirth standee at AMC Metropark Square 10 Texas">
+        <img src="images/in-theatre/jurassic-world-rebirth-amc-metropark.jpeg" loading="lazy"
+             alt="Jurassic World: Rebirth — AMC Metropark Square 10, Texas"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Jurassic World: Rebirth — AMC Metropark Square 10, Texas</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Freakier Friday standee at AMC Newport Centre 11 Jersey City">
+        <img src="images/in-theatre/freakier-friday-amc-newport-centre.jpg" loading="lazy"
+             alt="Freakier Friday — AMC Newport Centre 11, Jersey City"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Freakier Friday — AMC Newport Centre 11, Jersey City</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Mortal Kombat 2 standee at Cinergy Odessa Texas">
+        <img src="images/in-theatre/mortal-kombat-2-cinergy-odessa.jpg" loading="lazy"
+             alt="Mortal Kombat 2 — Cinergy Odessa, Texas"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Mortal Kombat 2 — Cinergy Odessa, Texas</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Anaconda Hissletoe standee at Santikos Casa Blanca 16 San Antonio">
+        <img src="images/in-theatre/anaconda-santikos-casablanca.jpg" loading="lazy"
+             alt="Anaconda — Santikos Casa Blanca 16, San Antonio"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Anaconda — Santikos Casa Blanca 16, San Antonio</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Backrooms caveman standee at AMC Block 30 at Orange California">
+        <img src="images/in-theatre/backrooms-amc-orange.jpeg" loading="lazy"
+             alt="Backrooms — AMC Block 30 at Orange, CA"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Backrooms — AMC Block 30 at Orange, CA</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Breadwinner standee at Regal City North 14 Chicago">
+        <img src="images/in-theatre/breadwinner-regal-city-north.jpeg" loading="lazy"
+             alt="Breadwinner — Regal City North 14, Chicago"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Breadwinner — Regal City North 14, Chicago</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Elio RealD bin sleeve at AMC Cartersville 12 Georgia">
+        <img src="images/in-theatre/elio-amc-cartersville.jpeg" loading="lazy"
+             alt="Elio — AMC Cartersville 12, Georgia"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Elio — AMC Cartersville 12, Georgia</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Hoppers standee at AMC Wayne 12 New Jersey">
+        <img src="images/in-theatre/hoppers-amc-wayne.jpg" loading="lazy"
+             alt="Hoppers — AMC Wayne 12, New Jersey"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Hoppers — AMC Wayne 12, New Jersey</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="How to Make a Killing graphic at AMC Sunset Place 24 South Miami">
+        <img src="images/in-theatre/how-to-make-a-killing-amc-sunset-place.jpg" loading="lazy"
+             alt="How to Make a Killing — AMC Sunset Place 24, South Miami"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">How to Make a Killing — AMC Sunset Place 24, South Miami</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="I Love Boosters showstopper standee at Cinemark 18 and XD Los Angeles">
+        <img src="images/in-theatre/i-love-boosters-cinemark-18.jpeg" loading="lazy"
+             alt="I Love Boosters — Cinemark 18 &amp; XD, Los Angeles"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">I Love Boosters — Cinemark 18 &amp; XD, Los Angeles</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Obsession standee at AMC 34th Street 14 New York">
+        <img src="images/in-theatre/obsession-amc-34th-street.jpg" loading="lazy"
+             alt="Obsession — AMC 34th Street 14, New York"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Obsession — AMC 34th Street 14, New York</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Send Help standee at AMC 84th Street 6 New York">
+        <img src="images/in-theatre/send-help-amc-84th-street.jpg" loading="lazy"
+             alt="Send Help — AMC 84th Street 6, New York"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Send Help — AMC 84th Street 6, New York</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="in-theatre" tabindex="0" role="button" aria-label="Silent Night Deadly Night and Zootopia 2 lobby standees">
+        <img src="images/in-theatre/silent-night-zootopia-standees.jpg" loading="lazy"
+             alt="Silent Night, Deadly Night &amp; Zootopia 2 — Lobby Standees"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          In-Theatre
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Silent Night, Deadly Night &amp; Zootopia 2 — Lobby Standees</span></div>
+      </div>
+
+      <!-- Custom Displays -->
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="The Mandalorian and Grogu exterior wallscape at AMC Alderwood 16">
+        <img src="images/custom-displays/AMC%20Alderwood%2016.jpeg" loading="lazy"
+             alt="The Mandalorian and Grogu — AMC Alderwood 16 Exterior Wallscape"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Mandalorian and Grogu — AMC Alderwood 16</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" data-feature="1" tabindex="0" role="button" aria-label="Avatar Fire and Ash IMAX wallscape at AMC Rockaway 16">
+        <img src="images/custom-displays/AMC%20Rockaway%2016.jpg" loading="lazy"
+             alt="Avatar: Fire and Ash — AMC Rockaway 16 IMAX Wallscape"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Avatar: Fire and Ash — AMC Rockaway 16 IMAX</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Power Ballad entrance window graphics at AMC Rolling Hills">
+        <img src="images/custom-displays/AMC%20Rolling%20Hills%20(1).jpeg" loading="lazy"
+             alt="Power Ballad — AMC Rolling Hills Entrance Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Power Ballad — AMC Rolling Hills Entrance</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="The Devil Wears Prada 2 lobby banner at AMC Santa Monica 7">
+        <img src="images/custom-displays/AMC%20Santa%20Monica%207%20(1).jpeg" loading="lazy"
+             alt="The Devil Wears Prada 2 — AMC Santa Monica 7 Lobby Banner"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Devil Wears Prada 2 — AMC Santa Monica 7</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Anaconda and 28 Years Later displays at Cinema West Beach Cities">
+        <img src="images/custom-displays/Anaconda%2628YL_CinemaWestBeachCities-Install.jpg" loading="lazy"
+             alt="Anaconda &amp; 28 Years Later: The Bone Temple — Cinema West Beach Cities"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Anaconda &amp; 28 Years Later — Cinema West Beach Cities</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Anaconda lobby display at Cinemark Downey">
+        <img src="images/custom-displays/Anaconda-CinemarkDowney-Install-Photo.jpg" loading="lazy"
+             alt="Anaconda — Cinemark Downey Lobby Display"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Anaconda — Cinemark Downey Lobby Display</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Column wraps at CMX Dolphin 19">
+        <img src="images/custom-displays/CMX%20Dolphin%2019%20(2).jpg" loading="lazy"
+             alt="CMX Dolphin 19 — Lobby Column Wraps"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CMX Dolphin 19 — Lobby Column Wraps</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Power Ballad window graphics at Cinemark Paradise 24">
+        <img src="images/custom-displays/Cinemark%20Paradise%2024.jpg" loading="lazy"
+             alt="Power Ballad — Cinemark Paradise 24 Window Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Power Ballad — Cinemark Paradise 24</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Michael window graphics at Cinemark Paradise 24">
+        <img src="images/custom-displays/Cinemark%20Paradise.jpg" loading="lazy"
+             alt="Michael — Cinemark Paradise 24 Window Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Michael — Cinemark Paradise 24</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="The Mandalorian and Grogu wall wrap at Marcus Orland Park">
+        <img src="images/custom-displays/Marcus%20Orland%20Park.jpg" loading="lazy"
+             alt="The Mandalorian and Grogu — Marcus Orland Park Wall Wrap"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Mandalorian and Grogu — Marcus Orland Park</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="The Devil Wears Prada 2 entrance graphics at Showcase Farmingdale">
+        <img src="images/custom-displays/NA%20Farmingdale.jpg" loading="lazy"
+             alt="The Devil Wears Prada 2 — Showcase Farmingdale Entrance Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Devil Wears Prada 2 — Showcase Farmingdale</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" tabindex="0" role="button" aria-label="Power Ballad elevator wraps at Regal Dania Pointe">
+        <img src="images/custom-displays/Regal%20Dania%20Pointe%20(1).jpg" loading="lazy"
+             alt="Power Ballad — Regal Dania Pointe Elevator Wraps"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Power Ballad — Regal Dania Pointe Elevator Wraps</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="custom-displays" data-feature="1" tabindex="0" role="button" aria-label="The Mandalorian and Grogu window graphics at Regal West Covina">
+        <img src="images/custom-displays/Regal%20West%20Covina%20(1).jpeg" loading="lazy"
+             alt="The Mandalorian and Grogu — Regal West Covina Window Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Custom Display
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">The Mandalorian and Grogu — Regal West Covina</span></div>
+      </div>
+
+      <!-- Conventions -->
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Studio standee lineup at CineEurope">
+        <img src="images/conventions/CineEurope%202024%20(1).jpg" loading="lazy"
+             alt="CineEurope — Studio Standee Lineup"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CineEurope — Studio Standee Lineup</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" data-feature="1" tabindex="0" role="button" aria-label="Pixels 3D standee at CineEurope">
+        <img src="images/conventions/CineEurope%202024%20(2).jpg" loading="lazy"
+             alt="CineEurope — Pixels 3D Standee"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CineEurope — Pixels 3D Standee</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" data-feature="1" tabindex="0" role="button" aria-label="Lionsgate banner wall at CineEurope">
+        <img src="images/conventions/CineEurope%202024%20(3).jpg" loading="lazy"
+             alt="CineEurope — Lionsgate Banner Wall"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CineEurope — Lionsgate Banner Wall</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Sculptural display installation at CineEurope">
+        <img src="images/conventions/CineEurope%202024%20(4).jpg" loading="lazy"
+             alt="CineEurope — Sculptural Display Install"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CineEurope — Sculptural Display Install</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Dolby Atmos booth display at CineEurope">
+        <img src="images/conventions/CineEurope%202024%20(5).jpg" loading="lazy"
+             alt="CineEurope — Dolby Atmos Booth Display"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">CineEurope — Dolby Atmos Booth Display</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Warner Bros poster wall convention display">
+        <img src="images/conventions/convention-wb-poster-wall.jpg" loading="lazy"
+             alt="Warner Bros — Convention Poster Wall"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Warner Bros — Convention Poster Wall</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="ShowSouth atrium window graphics">
+        <img src="images/conventions/convention-showsouth-atrium.jpg" loading="lazy"
+             alt="ShowSouth — Atrium Window Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">ShowSouth — Atrium Window Graphics</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Hotel escalator wraps convention display">
+        <img src="images/conventions/convention-escalator-wraps.jpg" loading="lazy"
+             alt="Escalator Wraps — Hotel Convention Displays"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Escalator Wraps — Hotel Convention Displays</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="Studio floor wrap graphics in convention lobby">
+        <img src="images/conventions/convention-floor-wrap.jpg" loading="lazy"
+             alt="Studio Floor Wrap — Convention Lobby"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Studio Floor Wrap — Convention Lobby</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="conventions" tabindex="0" role="button" aria-label="NAILBA 2014 elevator door graphics">
+        <img src="images/conventions/convention-nailba-elevator.jpg" loading="lazy"
+             alt="NAILBA 2014 — Elevator Door Graphics"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Convention
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">NAILBA 2014 — Elevator Door Graphics</span></div>
+      </div>
+
+      <!-- Fulfillment -->
+      <div class="gallery-item" data-category="fulfillment" tabindex="0" role="button" aria-label="Poster picking and packing on the fulfillment floor">
+        <img src="images/fulfillment/IMG_3024.jpg" loading="lazy"
+             alt="Poster Pick &amp; Pack — Fulfillment Floor"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Fulfillment
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Poster Pick &amp; Pack — Fulfillment Floor</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="fulfillment" data-feature="1" tabindex="0" role="button" aria-label="Racked and inventoried warehouse aisles">
+        <img src="images/fulfillment/IMG_3028_polished.jpg" loading="lazy"
+             alt="Racked &amp; Inventoried — Warehouse Aisles"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Fulfillment
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Racked &amp; Inventoried — Warehouse Aisles</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="fulfillment" tabindex="0" role="button" aria-label="Packing team at work on the fulfillment floor">
+        <img src="images/fulfillment/fulfillment-packing-team.jpg" loading="lazy"
+             alt="Packing Team at Work — Fulfillment Floor"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Fulfillment
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Packing Team at Work — Fulfillment Floor</span></div>
+      </div>
+
+      <div class="gallery-item" data-category="fulfillment" tabindex="0" role="button" aria-label="Freight trailer loading at the QSM dock">
+        <img src="images/fulfillment/fulfillment-fedex-dock.jpg" loading="lazy"
+             alt="Outbound Freight — Loading at the QSM Dock"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gallery-placeholder" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Fulfillment
+        </div>
+        <div class="gallery-overlay"><span class="gallery-caption">Outbound Freight — Loading at the QSM Dock</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ LIGHTBOX ═══════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <div class="lb-inner">
+    <button class="lb-btn" id="lb-prev" aria-label="Previous image">&#8592;</button>
+    <div class="lb-img-wrap">
+      <span class="lb-count" id="lb-count" aria-hidden="true"></span>
+      <button class="lb-close" id="lb-close" aria-label="Close lightbox">&#x2715;</button>
+      <img id="lb-img" src="" alt="" style="display:none">
+      <div id="lb-placeholder" class="lb-placeholder" style="display:none">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Image Coming Soon
+      </div>
+      <div class="lb-caption" id="lb-caption"></div>
+    </div>
+    <button class="lb-btn" id="lb-next" aria-label="Next image">&#8594;</button>
+  </div>
+</div>
+
+
+<!-- ═════════════════════════════════ SERVICES ═══════════════════════════════════════ -->
+<section id="services" class="section-pad" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <p class="eyebrow">What We Do</p>
+    <h2 class="section-title" id="services-heading">Five Ways We Serve You</h2>
+    <p class="section-lead">
+      From receiving to installation to the convention floor — under one roof, every step handled by our own team.
+    </p>
+
+    <div class="services-grid">
+      <!-- Fulfillment -->
+      <div class="service-card" id="svc-fulfillment">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5"/>
+        </svg>
+        <h3 class="service-name">Theatrical Fulfillment</h3>
+        <p class="service-desc">
+          End-to-end fulfillment from receiving to final-mile shipping — with live tracking and in-house manufacturing support. Also branded Quality Fulfillment Services.
+        </p>
+        <ol class="service-steps" aria-label="How fulfillment works">
+          <li>Receive and sort your materials at our facility</li>
+          <li>Store in climate-controlled, secure space</li>
+          <li>Pick &amp; pack each order to spec</li>
+          <li>Ship nationwide with live tracking</li>
+          <li>In-house manufacturing support whenever you need it</li>
+        </ol>
+        <a class="service-cta" href="#contact" data-service="fulfillment">Start a fulfillment project</a>
+      </div>
+
+      <!-- In-Theatre Displays -->
+      <div class="service-card" id="svc-in-theatre">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+        <h3 class="service-name">In-Theatre Displays</h3>
+        <p class="service-desc">
+          Circuit-wide surveying, reporting, manufacturing, and installation for in-theatre marketing programs — posters, banners, and standees, printed large-format in our climate-controlled print room.
+        </p>
+        <ol class="service-steps" aria-label="How in-theatre displays work">
+          <li>Survey every location in the circuit</li>
+          <li>Report findings so you can decide with confidence</li>
+          <li>Manufacture in-house — print, wood, metal</li>
+          <li>Install circuit-wide, on schedule</li>
+        </ol>
+        <a class="service-cta" href="#contact" data-service="in-theatre">Start an in-theatre program</a>
+      </div>
+
+      <!-- Custom Displays -->
+      <div class="service-card" id="svc-custom">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <h3 class="service-name">Custom Displays</h3>
+        <p class="service-desc">
+          Location scouting, design and layout, manufacturing, and installation — every detail handled from concept to opening day.
+        </p>
+        <ol class="service-steps" aria-label="How custom displays work">
+          <li>Scout the location and measure the space</li>
+          <li>Design and lay out the display for approval</li>
+          <li>Manufacture every piece under one roof</li>
+          <li>Install — finished and ready for opening day</li>
+        </ol>
+        <a class="service-cta" href="#contact" data-service="custom-displays">Start a custom display</a>
+      </div>
+
+      <!-- Theatrical Marquees -->
+      <div class="service-card" id="svc-marquees">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <h3 class="service-name">Theatrical Marquees</h3>
+        <p class="service-desc">
+          The complete marquee solution — layout and design, production, and installation — the craft QSM has built its reputation on since 1974.
+        </p>
+        <ol class="service-steps" aria-label="How marquees work">
+          <li>Layout &amp; design built around your theatre</li>
+          <li>Production in our own print, wood, and metal shops</li>
+          <li>Installation by our team — the craft since 1974</li>
+        </ol>
+        <a class="service-cta" href="#contact" data-service="marquees">Start a marquee project</a>
+      </div>
+
+      <!-- Convention Services -->
+      <div class="service-card" id="svc-conventions">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <h3 class="service-name">White Glove Convention Services</h3>
+        <p class="service-desc">
+          Domestic and international convention services — planning, design, layout, production, installation, logistics, and dedicated onsite support. CinemaCon, ShowEast, CineEurope, and beyond.
+        </p>
+        <ol class="service-steps" aria-label="How convention services work">
+          <li>Plan and design the program with you</li>
+          <li>Lay out the floor, produce every element in-house</li>
+          <li>Handle logistics — domestic or international</li>
+          <li>Install and support onsite, start to strike</li>
+        </ol>
+        <a class="service-cta" href="#contact" data-service="conventions">Start a convention program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+<section id="about" class="section-pad" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <p class="eyebrow">Our Story</p>
+    <h2 class="section-title" id="about-heading">Nearly Five Decades of Craft</h2>
+
+    <div class="about-grid">
+      <div>
+        <div class="about-body">
+          <p>
+            Quality Sign &amp; Marquee began in 1974 as Southland Display Co. — a family trade built on precision fabrication and a commitment to showing up ready. In 2007 we became Quality Sign &amp; Marquee, and through two brand evolutions and five decades, the core hasn't changed: we build the first thing audiences see.
+          </p>
+          <p>
+            From a single circuit installation to a full convention floor in Las Vegas, we handle every phase in-house. Our 50,000 sq ft facility houses a climate-controlled print room, woodshop, metal shop, and packaging and assembly — no subcontracting, no surprises.
+          </p>
+          <p>
+            Studios of every size trust QSM because the work is consistent, the team is experienced, and the standards haven't drifted in nearly 50 years.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-row">
+            <svg class="highlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="highlight-text"><strong>Family-owned</strong> since 1974 — consistent leadership, consistent quality.</span>
+          </div>
+          <div class="highlight-row">
+            <svg class="highlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="highlight-text">Serving <strong>major, mini-major, and independent studios</strong> nationwide.</span>
+          </div>
+          <div class="highlight-row">
+            <svg class="highlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="highlight-text">Competitive, <strong>adaptable pricing</strong> for studios of all sizes — scale up or down.</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="timeline" aria-label="Company timeline">
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">1974</p>
+            <p class="tl-desc">Founded as Southland Display Co. in Covina, CA — fabrication, signage, and theatrical displays for local exhibitors.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">1980s–90s</p>
+            <p class="tl-desc">Expanded circuit-wide relationships with major theatrical chains. Developed marquee manufacturing as a core specialty.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">2000s</p>
+            <p class="tl-desc">Grew convention services nationally. First CinemaCon and ShowEast programs. Began expanding fulfillment capabilities.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">2007</p>
+            <p class="tl-desc">Rebranded as Quality Sign &amp; Marquee. Launched Quality Fulfillment Services as the dedicated fulfillment arm.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">2010s</p>
+            <p class="tl-desc">Expanded to 50,000 sq ft. Added international convention work — CineEurope and global studio programs.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <p class="tl-year">Today</p>
+            <p class="tl-desc">Fully solar-powered facility. All-electric lift fleet. Five service pillars serving studios of every size — nationwide, under one roof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ FACILITY ════════════════════════════════════ -->
+<section id="facility" class="section-pad" aria-labelledby="facility-heading">
+  <div class="section-inner">
+    <p class="eyebrow">Our Facility</p>
+    <h2 class="section-title" id="facility-heading">Everything Under One Roof</h2>
+
+    <div class="facility-grid">
+      <div>
+        <div class="facility-body">
+          <p>
+            Our 50,000 sq ft company-owned warehouse and production facility in Covina, CA is where every project comes together. Design, fabrication, packing, and staging — all in one building, on one schedule.
+          </p>
+          <p>
+            Because we own the facility and control every step, we don't depend on outside vendors to hold a deadline.
+          </p>
+        </div>
+        <ul class="facility-list" aria-label="Facility features">
+          <li>Climate-controlled print room</li>
+          <li>Full woodshop and metal shop</li>
+          <li>Packaging and assembly floor</li>
+          <li>Climate-controlled storage and staging areas</li>
+          <li>All-electric lift equipment fleet</li>
+          <li>100%-owned, fully solar-powered energy system</li>
+          <li>1665 W. Industrial Park St., Covina, CA 91722</li>
+        </ul>
+      </div>
+
+      <div class="facility-stats">
+        <div class="facility-stat">
+          <div class="facility-stat-num">50K</div>
+          <div class="facility-stat-label">Square Feet</div>
+        </div>
+        <div class="facility-stat">
+          <div class="facility-stat-num">1974</div>
+          <div class="facility-stat-label">Family-Owned Since</div>
+        </div>
+        <div class="facility-stat">
+          <div class="facility-stat-num">Solar</div>
+          <div class="facility-stat-label">Powered</div>
+        </div>
+        <div class="facility-stat">
+          <div class="facility-stat-num">1 Roof</div>
+          <div class="facility-stat-label">Entire Process</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ SUSTAINABILITY ══════════════════════════════════ -->
+<section id="sustainability" class="section-pad" aria-labelledby="sustain-heading">
+  <div class="section-inner">
+    <p class="eyebrow">Our Commitment</p>
+    <h2 class="section-title" id="sustain-heading">Quality Meets Responsibility</h2>
+    <p class="section-lead">
+      Commitment to our clients and commitment to doing the work responsibly go together. Here's what that looks like at QSM.
+    </p>
+
+    <div class="sustain-grid">
+      <div class="sustain-card">
+        <div class="sustain-icon" aria-hidden="true">☀️</div>
+        <h3 class="sustain-title">Solar-Powered Facility</h3>
+        <p class="sustain-desc">
+          Our entire 50,000 sq ft warehouse and production facility runs on a 100%-owned solar power system — clean energy without a utility dependency.
+        </p>
+      </div>
+      <div class="sustain-card">
+        <div class="sustain-icon" aria-hidden="true">♻️</div>
+        <h3 class="sustain-title">Responsible Waste Management</h3>
+        <p class="sustain-desc">
+          Paper, cardboard, and plastics are recycled locally. We work with community partners to keep production waste out of landfill where possible.
+        </p>
+      </div>
+      <div class="sustain-card">
+        <div class="sustain-icon" aria-hidden="true">⚡</div>
+        <h3 class="sustain-title">All-Electric Lift Fleet</h3>
+        <p class="sustain-desc">
+          All lift equipment — including forklifts — is electric-only. Zero emissions on the warehouse floor, day in and day out.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════ CONTACT ════════════════════════════════════════ -->
+<section id="contact" class="section-pad" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <p class="eyebrow">Get in Touch</p>
+    <h2 class="section-title" id="contact-heading">Start a Project</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>
+          Tell us about your project and we'll get back to you promptly. Whether it's a marquee, a circuit-wide display program, a convention, or a fulfillment program — we've done it before and we're ready to do it again.
+        </p>
+        <p style="margin-top:1rem; font-style:italic; color:rgba(255,255,255,.45); font-size:.88rem;">
+          Where quality meets commitment.
+        </p>
+
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.1 6.1l.97-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
+          <span><a href="tel:+16269670900">(626) 967-0900</a></span>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span><a href="mailto:info@qualitysignandmarquee.com">info@qualitysignandmarquee.com</a></span>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>1665 W. Industrial Park St.<br>Covina, CA 91722</span>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon–Fri, 9:00 AM – 5:30 PM PT</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form" aria-label="Project inquiry form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="cf-company">Company / Studio</label>
+            <input type="text" id="cf-company" name="company" placeholder="Studio or company" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="cf-service">Service</label>
+          <select id="cf-service" name="service">
+            <option value="">Select a service…</option>
+            <option value="fulfillment">Theatrical Fulfillment</option>
+            <option value="in-theatre">In-Theatre Displays</option>
+            <option value="custom-displays">Custom Displays</option>
+            <option value="marquees">Theatrical Marquees</option>
+            <option value="conventions">White Glove Convention Services</option>
+            <option value="printing">Poster &amp; Large-Format Printing</option>
+            <option value="other">Other / Multiple</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Tell us about your project</label>
+          <textarea id="cf-message" name="message" placeholder="Dates, scope, locations, anything helpful…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="QualityLogo12.png" alt="Quality Sign &amp; Marquee" style="height:44px;width:auto;display:block;">
+      <p>
+        Theatrical Marketing, Fulfillment &amp; Convention Services Since 1974.<br>
+        Covina, CA — serving studios nationwide.
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Services</p>
+      <ul class="footer-links">
+        <li><a href="#services">Theatrical Fulfillment</a></li>
+        <li><a href="#services">In-Theatre Displays</a></li>
+        <li><a href="#services">Custom Displays</a></li>
+        <li><a href="#services">Theatrical Marquees</a></li>
+        <li><a href="#services">Convention Services</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Company</p>
+      <ul class="footer-links">
+        <li><span class="nav-soon" title="Online ordering coming soon">Shop / Order<span class="soon-tag">Soon</span></span></li>
+        <li><a href="login.html">Customer Login</a></li>
+        <li><a href="#about">About QSM</a></li>
+        <li><a href="#facility">Our Facility</a></li>
+        <li><a href="#sustainability">Sustainability</a></li>
+        <li><a href="#gallery">Portfolio</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="tel:+16269670900">(626) 967-0900</a></li>
+        <li><a href="mailto:info@qualitysignandmarquee.com">info@qualitysignandmarquee.com</a></li>
+        <li style="color:rgba(255,255,255,.4); font-size:.85rem;">Mon–Fri 9 AM – 5:30 PM PT</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; <span id="footer-year"></span> Quality Sign &amp; Marquee. All rights reserved. Covina, CA.</p>
+    <div class="footer-social" aria-label="Social media links">
+      <a href="#" aria-label="Facebook" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="#" aria-label="Twitter / X" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════ JS ═══════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Footer year ── */
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  /* ── Mobile nav ── */
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  // Close nav on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ── Marquee bulb strip ── */
+  document.querySelectorAll('.bulb-strip').forEach(strip => {
+    strip.innerHTML = Array.from({ length: 28 }, () => '<span class="bulb"></span>').join('');
+  });
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Scroll reveal ── */
+  if ('IntersectionObserver' in window && !prefersReduced) {
+    const revealTargets = document.querySelectorAll('.section-pad .section-inner, #stats .stats-inner');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+    revealTargets.forEach(t => { t.classList.add('reveal'); ro.observe(t); });
+  }
+
+  /* ── Stats count-up ── */
+  (function statsCountUp() {
+    const nums = document.querySelectorAll('.stat-number[data-count]');
+    if (!nums.length || prefersReduced || !('IntersectionObserver' in window)) return;
+    const animate = el => {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const group = el.dataset.grouping !== 'false' && target > 999;
+      const dur = 1400, start = performance.now();
+      const tick = now => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(target * eased);
+        el.textContent = (group ? val.toLocaleString() : val) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const so = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animate(e.target); so.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(n => so.observe(n));
+  })();
+
+  /* ── Scroll-spy: highlight active nav link ── */
+  (function scrollSpy() {
+    if (!('IntersectionObserver' in window)) return;
+    const map = new Map();
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+      const sec = document.querySelector(a.getAttribute('href'));
+      if (sec) map.set(sec, a);
+    });
+    if (!map.size) return;
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const link = map.get(e.target);
+        if (!link || link.classList.contains('nav-cta')) return;
+        if (e.isIntersecting) {
+          map.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    map.forEach((_, sec) => spy.observe(sec));
+  })();
+
+  /* ── Process A-to-Z walkthrough ── */
+  (function processWalkthrough() {
+    const steps = [
+      { no: '01', where: 'Receiving Dock', title: 'We Receive',
+        desc: 'Your materials arrive at our 50,000 sq ft facility. Everything is checked in, sorted, and logged the day it lands — so you know exactly what we have from hour one.' },
+      { no: '02', where: 'Design Studio', title: 'We Design',
+        desc: 'Layout and design built around your title, your theatre, or your convention floor. You approve every detail before anything goes into production.' },
+      { no: '03', where: 'Woodshop & Metal Shop', title: 'We Fabricate',
+        desc: 'Frames, structures, and hardware are built in our own woodshop and metal shop — no subcontractors.' },
+      { no: '04', where: 'Climate-Controlled Print Room', title: 'We Print',
+        desc: 'Large-format graphics produced in a climate-controlled print room for consistent color and clean finishes, run after run.' },
+      { no: '05', where: 'Assembly & Packaging Floor', title: 'We Assemble & Pack',
+        desc: 'Every piece is assembled, quality-checked, and packed to survive the road. Fulfillment orders are picked and packed to spec right here.' },
+      { no: '06', where: 'Shipping — Nationwide', title: 'We Ship',
+        desc: 'Out the door with live tracking, anywhere in the country. One schedule, one team — nothing waits on a third party.' },
+      { no: '07', where: 'Your Theatre or Convention Floor', title: 'We Install',
+        desc: 'Our crew installs onsite and stays until it’s right — from a single marquee to a full convention program, domestic or international.' }
+    ];
+    const btns = Array.from(document.querySelectorAll('.process-step-btn'));
+    const stage = document.getElementById('process-stage');
+    const elWhere = document.getElementById('process-where');
+    const elTitle = document.getElementById('process-title');
+    const elDesc = document.getElementById('process-desc');
+    const figs = Array.from(document.querySelectorAll('#process-media figure'));
+    const fill = document.getElementById('process-fill');
+    if (!btns.length || !stage) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const INTERVAL = 6000;
+    document.documentElement.style.setProperty('--proc-interval', INTERVAL + 'ms');
+    let idx = 0, timer = null;
+
+    function render(i) {
+      const s = steps[i];
+      stage.classList.add('fading');
+      setTimeout(() => {
+        elWhere.textContent = s.where;
+        elTitle.textContent = s.title;
+        elDesc.textContent = s.desc;
+        stage.classList.remove('fading');
+      }, reduceMotion ? 0 : 200);
+      figs.forEach((f, fi) => f.classList.toggle('active', fi === i));
+      btns.forEach((b, bi) => {
+        b.classList.toggle('active', bi === i);
+        b.setAttribute('aria-selected', bi === i);
+      });
+      idx = i;
+      restartProgress();
+    }
+
+    function restartProgress() {
+      fill.classList.remove('running');
+      // force reflow to restart the animation
+      void fill.offsetWidth;
+      if (!reduceMotion && timer) fill.classList.add('running');
+    }
+
+    function startAuto() {
+      if (reduceMotion || timer) return;
+      timer = setInterval(() => render((idx + 1) % steps.length), INTERVAL);
+      fill.classList.add('running');
+    }
+    function stopAuto() {
+      if (timer) { clearInterval(timer); timer = null; }
+      fill.classList.remove('running');
+    }
+
+    btns.forEach((b, i) => b.addEventListener('click', () => {
+      stopAuto();
+      render(i);
+    }));
+
+    const section = document.getElementById('process');
+    section.addEventListener('mouseenter', stopAuto);
+    section.addEventListener('mouseleave', () => { startAuto(); });
+
+    // Start cycling when the section scrolls into view
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { e.isIntersecting ? startAuto() : stopAuto(); });
+      }, { threshold: 0.35 });
+      io.observe(section);
+    } else if (!reduceMotion) {
+      startAuto();
+    }
+  })();
+
+  /* ── Service CTA → preselect service in contact form ── */
+  document.querySelectorAll('a[data-service]').forEach(a => {
+    a.addEventListener('click', () => {
+      const sel = document.getElementById('cf-service');
+      if (sel) sel.value = a.dataset.service;
+    });
+  });
+
+  /* ── Gallery filter ──
+     "All" shows a 2-photo highlight per category; picking a category shows everything in it. */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  const galleryNote = document.getElementById('gallery-note');
+  const TEASER_COUNT = 2;
+
+  function applyGalleryFilter(filter) {
+    let shown = 0;
+    if (filter === 'all') {
+      const byCat = {};
+      galleryItems.forEach(it => {
+        (byCat[it.dataset.category] = byCat[it.dataset.category] || []).push(it);
+      });
+      const visible = new Set();
+      Object.values(byCat).forEach(arr => {
+        arr.sort((a, b) => b.hasAttribute('data-feature') - a.hasAttribute('data-feature'));
+        arr.slice(0, TEASER_COUNT).forEach(it => visible.add(it));
+      });
+      galleryItems.forEach(it => {
+        const show = visible.has(it);
+        it.setAttribute('data-hidden', !show);
+        it.setAttribute('aria-hidden', !show);
+        if (show) shown++;
+      });
+    } else {
+      galleryItems.forEach(it => {
+        const show = it.dataset.category === filter;
+        it.setAttribute('data-hidden', !show);
+        it.setAttribute('aria-hidden', !show);
+        if (show) shown++;
+      });
+    }
+    if (galleryNote) {
+      if (filter === 'all') {
+        galleryNote.innerHTML = 'A few highlights from each category — <strong>click a category above to see all the photos.</strong>';
+      } else {
+        const btn = document.querySelector('.filter-btn[data-filter="' + filter + '"]');
+        galleryNote.innerHTML = 'Showing all ' + shown + ' ' + (btn ? btn.textContent : '') + ' photos — click <strong>All</strong> to go back to the highlights.';
+      }
+    }
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => { b.classList.remove('active'); b.removeAttribute('aria-pressed'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      applyGalleryFilter(btn.dataset.filter);
+    });
+  });
+  applyGalleryFilter('all');
+
+  /* ── Lightbox ── */
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbPlaceholder = document.getElementById('lb-placeholder');
+  const lbCaption = document.getElementById('lb-caption');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  let lbItems = [];
+  let lbIdx = 0;
+
+  function getLbItems() {
+    return Array.from(document.querySelectorAll('.gallery-item:not([data-hidden="true"])'));
+  }
+
+  function openLightbox(item) {
+    lbItems = getLbItems();
+    lbIdx = lbItems.indexOf(item);
+    showLbItem(lbIdx);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showLbItem(idx) {
+    const item = lbItems[idx];
+    const img = item.querySelector('img');
+    const caption = item.querySelector('.gallery-caption');
+    lbImg.style.display = 'none';
+    lbPlaceholder.style.display = 'none';
+
+    if (img && img.complete && img.naturalWidth > 0) {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbImg.style.display = 'block';
+    } else if (img && !img.complete) {
+      // Wait for load
+      const testImg = new Image();
+      testImg.onload = () => { lbImg.src = testImg.src; lbImg.alt = img.alt; lbImg.style.display = 'block'; lbPlaceholder.style.display = 'none'; };
+      testImg.onerror = () => { lbPlaceholder.style.display = 'flex'; };
+      testImg.src = img.src;
+    } else {
+      lbPlaceholder.style.display = 'flex';
+    }
+    lbCaption.textContent = caption ? caption.textContent : '';
+    document.getElementById('lb-count').textContent = (idx + 1) + ' / ' + lbItems.length;
+    lbIdx = idx;
+  }
+
+  function prevItem() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; showLbItem(lbIdx); }
+  function nextItem() { lbIdx = (lbIdx + 1) % lbItems.length; showLbItem(lbIdx); }
+
+  // Open on click or Enter/Space
+  document.getElementById('gallery-grid').addEventListener('click', e => {
+    const item = e.target.closest('.gallery-item');
+    if (item) openLightbox(item);
+  });
+  document.getElementById('gallery-grid').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const item = e.target.closest('.gallery-item');
+      if (item) { e.preventDefault(); openLightbox(item); }
+    }
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', prevItem);
+  lbNext.addEventListener('click', nextItem);
+
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevItem();
+    if (e.key === 'ArrowRight') nextItem();
+  });
+
+  /* ── Contact form (mailto) ── */
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const company = document.getElementById('cf-company').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const service = document.getElementById('cf-service').value;
+    const message = document.getElementById('cf-message').value.trim();
+
+    const body = [
+      `Name: ${name}`,
+      company ? `Company: ${company}` : '',
+      `Email: ${email}`,
+      service ? `Service: ${service}` : '',
+      '',
+      message
+    ].filter(Boolean).join('\n');
+
+    const subject = encodeURIComponent(`Project Inquiry from ${name}${company ? ' / ' + company : ''}`);
+    const bodyEnc = encodeURIComponent(body);
+    window.location.href = `mailto:info@qualitysignandmarquee.com?subject=${subject}&body=${bodyEnc}`;
+  });
+
+})();
+</script>
+</body>
+</html>
