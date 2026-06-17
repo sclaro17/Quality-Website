@@ -840,6 +840,26 @@
     .btn-submit:hover, .btn-submit:focus-visible {
       background: var(--red-hover); transform: translateY(-1px);
     }
+    .btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    /* Honeypot — hidden from humans, visible to dumb bots */
+    .hp-field {
+      position: absolute !important; left: -9999px !important;
+      width: 1px; height: 1px; overflow: hidden;
+    }
+    /* Form status messages */
+    .form-status {
+      border-radius: 3px; padding: .85rem 1rem; font-size: .92rem;
+      line-height: 1.4; display: none;
+    }
+    .form-status.show { display: block; }
+    .form-status.ok {
+      background: rgba(212,164,55,.12);
+      border: 1px solid var(--gold); color: var(--white);
+    }
+    .form-status.err {
+      background: rgba(179,32,37,.12);
+      border: 1px solid var(--red); color: var(--white);
+    }
 
     /* ── Footer ── */
     footer {
@@ -2125,7 +2145,14 @@
         </div>
       </div>
 
-      <form class="contact-form" id="contact-form" aria-label="Project inquiry form">
+      <form class="contact-form" id="contact-form" aria-label="Project inquiry form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms config -->
+        <input type="hidden" name="access_key" value="fc813f31-73a4-44df-a236-de35c019e8c4">
+        <input type="hidden" name="subject" value="New Project Inquiry — Quality Sign &amp; Marquee">
+        <input type="hidden" name="from_name" value="QSM Website">
+        <!-- Honeypot: leave empty. Bots fill it; submission is rejected. -->
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
         <div class="form-row">
           <div class="form-group">
             <label for="cf-name">Name</label>
@@ -2136,9 +2163,15 @@
             <input type="text" id="cf-company" name="company" placeholder="Studio or company" autocomplete="organization">
           </div>
         </div>
-        <div class="form-group">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="(000) 000-0000" required autocomplete="tel">
+          </div>
         </div>
         <div class="form-group">
           <label for="cf-service">Service</label>
@@ -2157,7 +2190,8 @@
           <label for="cf-message">Tell us about your project</label>
           <textarea id="cf-message" name="message" placeholder="Dates, scope, locations, anything helpful…"></textarea>
         </div>
-        <button type="submit" class="btn-submit">Send inquiry</button>
+        <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+        <button type="submit" class="btn-submit" id="cf-submit">Send inquiry</button>
       </form>
     </div>
   </div>
@@ -2542,28 +2576,67 @@
     if (e.key === 'ArrowRight') nextItem();
   });
 
-  /* ── Contact form (mailto) ── */
-  document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const name    = document.getElementById('cf-name').value.trim();
-    const company = document.getElementById('cf-company').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
-    const service = document.getElementById('cf-service').value;
-    const message = document.getElementById('cf-message').value.trim();
+  /* ── Contact form (Web3Forms + anti-spam) ── */
+  (function () {
+    const form    = document.getElementById('contact-form');
+    if (!form) return;
+    const statusEl = document.getElementById('cf-status');
+    const submitEl = document.getElementById('cf-submit');
+    const loadedAt = Date.now();        // for too-fast (bot) detection
+    const MIN_FILL_MS  = 3000;          // reject submits faster than 3s
+    const MAX_PER_VISIT = 3;            // cap submissions per page visit
+    let   sent = 0;
 
-    const body = [
-      `Name: ${name}`,
-      company ? `Company: ${company}` : '',
-      `Email: ${email}`,
-      service ? `Service: ${service}` : '',
-      '',
-      message
-    ].filter(Boolean).join('\n');
+    function setStatus(msg, kind) {
+      statusEl.textContent = msg;
+      statusEl.className = 'form-status show ' + kind;
+    }
 
-    const subject = encodeURIComponent(`Project Inquiry from ${name}${company ? ' / ' + company : ''}`);
-    const bodyEnc = encodeURIComponent(body);
-    window.location.href = `mailto:info@qualitysignandmarquee.com?subject=${subject}&body=${bodyEnc}`;
-  });
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+
+      // 1) Honeypot — if filled, silently pretend success
+      if (form.botcheck && form.botcheck.checked) { return; }
+
+      // 2) Too-fast guard (bots submit near-instantly)
+      if (Date.now() - loadedAt < MIN_FILL_MS) {
+        setStatus('Please take a moment to complete the form, then try again.', 'err');
+        return;
+      }
+
+      // 3) Per-visit submission cap
+      if (sent >= MAX_PER_VISIT) {
+        setStatus('You’ve reached the submission limit for this visit. Please email us directly at info@qualitysignandmarquee.com.', 'err');
+        return;
+      }
+
+      submitEl.disabled = true;
+      submitEl.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          sent++;
+          form.reset();
+          setStatus('Thanks — your inquiry has been sent. We’ll be in touch shortly.', 'ok');
+          submitEl.textContent = 'Sent';
+        } else {
+          setStatus('Something went wrong sending your inquiry. Please email info@qualitysignandmarquee.com.', 'err');
+          submitEl.disabled = false;
+          submitEl.textContent = 'Send inquiry';
+        }
+      } catch (err) {
+        setStatus('Network error — please check your connection or email info@qualitysignandmarquee.com.', 'err');
+        submitEl.disabled = false;
+        submitEl.textContent = 'Send inquiry';
+      }
+    });
+  })();
 
 })();
 </script>
