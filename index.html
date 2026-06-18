@@ -828,6 +828,10 @@
       outline: none; border-color: var(--red);
     }
     .form-group textarea { resize: vertical; min-height: 130px; }
+    .phone-row { display: flex; gap: .5rem; }
+    .phone-row input[type="tel"] { flex: 1 1 auto; }
+    .phone-row .cf-ext-input { flex: 0 0 110px; min-width: 0; }
+    @media (max-width: 380px) { .phone-row .cf-ext-input { flex-basis: 90px; } }
     .form-group select option { background: var(--dark); }
     .btn-submit {
       background: var(--red); color: var(--white);
@@ -2180,7 +2184,10 @@
           </div>
           <div class="form-group">
             <label for="cf-phone">Phone</label>
-            <input type="tel" id="cf-phone" name="phone" placeholder="(000) 000-0000" required autocomplete="tel">
+            <div class="phone-row">
+              <input type="tel" id="cf-phone" name="phone" placeholder="(000) 000-0000" required autocomplete="tel" inputmode="tel" maxlength="14">
+              <input type="text" id="cf-ext" name="extension" class="cf-ext-input" placeholder="Ext." autocomplete="off" inputmode="numeric" maxlength="6" aria-label="Phone extension (optional)">
+            </div>
           </div>
         </div>
         <div class="form-group">
@@ -2602,11 +2609,43 @@
       statusEl.className = 'form-status show ' + kind;
     }
 
+    // Strip any HTML / script markup from a value
+    function sanitize(v) {
+      return v.replace(/<[^>]*>/g, '')   // remove anything that looks like a tag
+              .replace(/[<>]/g, '')      // remove stray angle brackets
+              .trim();
+    }
+
+    // Live phone formatting → (123) 456-7890
+    const phoneEl = document.getElementById('cf-phone');
+    if (phoneEl) {
+      phoneEl.addEventListener('input', () => {
+        const d = phoneEl.value.replace(/\D/g, '').slice(0, 10);
+        let out = d;
+        if (d.length > 6)      out = `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+        else if (d.length > 3) out = `(${d.slice(0,3)}) ${d.slice(3)}`;
+        else if (d.length > 0) out = `(${d}`;
+        phoneEl.value = out;
+      });
+    }
+
+    // Extension: digits only
+    const extEl = document.getElementById('cf-ext');
+    if (extEl) {
+      extEl.addEventListener('input', () => {
+        extEl.value = extEl.value.replace(/\D/g, '');
+      });
+    }
+
     form.addEventListener('submit', async e => {
       e.preventDefault();
 
       // 1) Honeypot — if filled, silently pretend success
       if (form.botcheck && form.botcheck.checked) { return; }
+
+      // Strip any HTML/script markup from every text field before sending
+      form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea')
+          .forEach(el => { el.value = sanitize(el.value); });
 
       // 2) Too-fast guard (bots submit near-instantly)
       if (Date.now() - loadedAt < MIN_FILL_MS) {
