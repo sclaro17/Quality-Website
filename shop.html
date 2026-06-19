@@ -3,300 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — Quality Sign &amp; Marquee</title>
-  <meta name="description" content="Order banners, signs, displays, trade show materials and more — powered by Quality Sign &amp; Marquee.">
+  <title>Order Products — Quality Sign &amp; Marquee</title>
+  <meta name="description" content="Browse and order banners, signs, displays, trade show materials and more — all produced by Quality Sign &amp; Marquee since 1974.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://qualitysignandmarquee.com/shop.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --nav-bg:    #333333;
-      --dark:      #262626;
-      --red:       #B32025;
-      --red-hover: #C62828;
-      --gold:      #D4A437;
-      --white:     #FFFFFF;
-      --card-bg:   #333333;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--nav-bg:#333333;--dark:#262626;--red:#B32025;--red-hover:#C62828;--gold:#D4A437;--white:#FFFFFF;--card-bg:#333333}
+    html{scroll-behavior:smooth}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    body{font-family:'Archivo',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;font-family:'Archivo',sans-serif;border:none;background:none}
+    img{max-width:100%;display:block}
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--red);color:var(--white);padding:.5rem 1rem;z-index:10000;transition:top .2s}
+    .skip-link:focus{top:0}
+    #nav{position:sticky;top:0;z-index:1000;background:var(--nav-bg);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+    .nav-logo img{height:44px;width:auto;display:block}
+    .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
+    .nav-links a{font-size:.85rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.8);transition:color .2s;padding:.25rem 0;border-bottom:2px solid transparent}
+    .nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--white);border-bottom-color:var(--gold)}
+    .nav-cta{background:var(--red);color:var(--white)!important;padding:.5rem 1.25rem!important;border-radius:3px;border-bottom:none!important;transition:background .2s!important}
+    .nav-cta:hover,.nav-cta:focus-visible{background:var(--red-hover)!important}
+    .nav-cart-btn{position:relative;color:var(--white);padding:.35rem;display:flex;align-items:center;transition:color .2s}
+    .nav-cart-btn:hover,.nav-cart-btn:focus-visible{color:var(--gold)}
+    .nav-cart-btn svg{width:22px;height:22px}
+    .cart-badge{position:absolute;top:-4px;right:-6px;background:var(--red);color:var(--white);font-size:.62rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .nav-toggle{display:none;color:var(--white);flex-direction:column;gap:5px;padding:.5rem}
+    .nav-toggle span{width:24px;height:2px;background:var(--white);display:block}
+    @media(max-width:960px){
+      .nav-toggle{display:flex}
+      .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--nav-bg);flex-direction:column;gap:0;padding:1rem 2rem;box-shadow:0 4px 12px rgba(0,0,0,.4);z-index:999}
+      .nav-links.open{display:flex}
+      .nav-links li{width:100%}
+      .nav-links a{display:block;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08)!important}
+      .nav-cta{display:inline-block;margin-top:.5rem;border:none!important}
     }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-    body {
-      font-family: 'Archivo', sans-serif;
-      background: var(--dark);
-      color: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; font-family: 'Archivo', sans-serif; }
-    img { max-width: 100%; display: block; }
-
-    /* ── Skip link ── */
-    .skip-link {
-      position: absolute; top: -40px; left: 0;
-      background: var(--red); color: var(--white);
-      padding: .5rem 1rem; z-index: 10000; transition: top .2s;
-    }
-    .skip-link:focus { top: 0; }
-
-    /* ── Nav ── */
-    #nav {
-      position: sticky; top: 0; z-index: 1000;
-      background: var(--nav-bg);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 64px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.4);
-    }
-    .nav-logo { display: flex; align-items: center; }
-    .nav-logo img { height: 44px; width: auto; display: block; }
-    .nav-links {
-      display: flex; align-items: center; gap: 1.75rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: .85rem; font-weight: 500; letter-spacing: .04em;
-      text-transform: uppercase; color: rgba(255,255,255,.8);
-      transition: color .2s; padding: .25rem 0;
-      border-bottom: 2px solid transparent;
-    }
-    .nav-links a:hover, .nav-links a:focus-visible,
-    .nav-links a.active {
-      color: var(--white); border-bottom-color: var(--gold);
-    }
-    .nav-cta {
-      background: var(--red); color: var(--white) !important;
-      padding: .5rem 1.25rem !important; border-radius: 3px;
-      border-bottom: none !important; transition: background .2s !important;
-    }
-    .nav-cta:hover, .nav-cta:focus-visible { background: var(--red-hover) !important; }
-    .nav-toggle {
-      display: none; background: none; border: none; color: var(--white);
-      flex-direction: column; gap: 5px; padding: .5rem;
-    }
-    .nav-toggle span { width: 24px; height: 2px; background: var(--white); display: block; }
-    @media (max-width: 860px) {
-      .nav-toggle { display: flex; }
-      .nav-links {
-        display: none; position: absolute; top: 64px; left: 0; right: 0;
-        background: var(--nav-bg); flex-direction: column; gap: 0;
-        padding: 1rem 2rem; box-shadow: 0 4px 12px rgba(0,0,0,.4);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: .75rem 0; border-bottom: 1px solid rgba(255,255,255,.08) !important; }
-      .nav-cta { display: inline-block; margin-top: .5rem; border: none !important; }
-    }
-
-    /* ── Hero banner ── */
-    .shop-hero {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2b1a1a 60%, #1a1a1a 100%);
-      padding: 4rem 2rem 3.5rem;
-      position: relative; overflow: hidden;
-    }
-    .shop-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(179,32,37,.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .shop-hero-inner {
-      max-width: 1200px; margin: 0 auto;
-      position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 2rem;
-    }
-    .shop-hero-text .eyebrow {
-      font-size: .75rem; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: .75rem;
-    }
-    .shop-hero-text h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1; letter-spacing: .02em;
-    }
-    .shop-hero-text p {
-      font-size: 1.05rem; color: rgba(255,255,255,.7);
-      max-width: 50ch; margin-top: .85rem; line-height: 1.65;
-    }
-    .shop-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; }
-    .btn-primary {
-      display: inline-block; background: var(--red); color: var(--white);
-      padding: .85rem 2rem; border-radius: 3px;
-      font-size: .95rem; font-weight: 700; letter-spacing: .04em;
-      transition: background .2s, transform .15s; border: none;
-    }
-    .btn-primary:hover, .btn-primary:focus-visible {
-      background: var(--red-hover); transform: translateY(-1px);
-    }
-    .btn-ghost {
-      display: inline-block; background: transparent; color: var(--white);
-      padding: .85rem 2rem; border-radius: 3px;
-      font-size: .95rem; font-weight: 700; letter-spacing: .04em;
-      border: 2px solid rgba(255,255,255,.35);
-      transition: border-color .2s, transform .15s;
-    }
-    .btn-ghost:hover, .btn-ghost:focus-visible {
-      border-color: var(--white); transform: translateY(-1px);
-    }
-    .shop-hero-badge {
-      background: var(--card-bg); border-radius: 8px;
-      padding: 1.5rem 2rem; text-align: center;
-      border: 1px solid rgba(255,255,255,.08);
-      flex-shrink: 0;
-    }
-    .badge-number {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem; color: var(--gold); line-height: 1;
-    }
-    .badge-label {
-      font-size: .75rem; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase; color: rgba(255,255,255,.5);
-      margin-top: .35rem;
-    }
-
-    /* ── Turnaround banner ── */
-    .turnaround-bar {
-      background: var(--red);
-      padding: .75rem 2rem;
-      text-align: center;
-      font-size: .85rem; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .turnaround-bar span { color: rgba(255,255,255,.8); font-weight: 400; text-transform: none; letter-spacing: 0; }
-
-    /* ── Section shared ── */
-    .section-pad { padding: 4.5rem 2rem; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
-    .eyebrow {
-      font-size: .75rem; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: .75rem;
-    }
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: .03em; line-height: 1.05; margin-bottom: 1rem;
-    }
-    .section-lead {
-      font-size: 1rem; color: rgba(255,255,255,.65);
-      max-width: 58ch; line-height: 1.65; margin-bottom: 2.5rem;
-    }
-
-    /* ── Product category grid ── */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-    .product-card {
-      background: var(--card-bg);
-      border-radius: 6px;
-      padding: 1.75rem;
-      border-top: 3px solid transparent;
-      display: flex; flex-direction: column;
-      transition: border-color .2s, transform .2s;
-    }
-    .product-card:hover { border-top-color: var(--red); transform: translateY(-3px); }
-    .product-icon {
-      width: 44px; height: 44px; color: var(--gold);
-      margin-bottom: 1rem; flex-shrink: 0;
-    }
-    .product-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem; letter-spacing: .05em; margin-bottom: .5rem;
-    }
-    .product-desc {
-      font-size: .88rem; color: rgba(255,255,255,.6);
-      line-height: 1.6; flex: 1;
-    }
-    .product-items {
-      display: flex; flex-wrap: wrap; gap: .35rem;
-      margin: 1rem 0 1.25rem;
-    }
-    .product-item {
-      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; color: rgba(255,255,255,.5);
-      background: rgba(255,255,255,.07);
-      padding: .2rem .55rem; border-radius: 2px;
-    }
-    .product-card .card-cta {
-      display: inline-block; margin-top: auto;
-      background: transparent; color: var(--red);
-      border: 1px solid var(--red);
-      padding: .55rem 1.25rem; border-radius: 3px;
-      font-size: .82rem; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase; align-self: flex-start;
-      transition: background .2s, color .2s;
-    }
-    .product-card .card-cta:hover, .product-card .card-cta:focus-visible {
-      background: var(--red); color: var(--white);
-    }
-
-    /* ── How it works ── */
-    #how { background: var(--card-bg); }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem; margin-top: 2.5rem;
-    }
-    .step { text-align: center; }
-    .step-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem; color: var(--red); line-height: 1;
-    }
-    .step-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem; letter-spacing: .06em; margin: .5rem 0 .5rem;
-    }
-    .step-desc {
-      font-size: .875rem; color: rgba(255,255,255,.6); line-height: 1.6;
-    }
-
-    /* ── Account CTA ── */
-    #account-cta {
-      background: linear-gradient(135deg, #1f1414 0%, #1a1a1a 100%);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .account-cta-inner { max-width: 640px; margin: 0 auto; }
-    .account-cta-inner h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem); letter-spacing: .03em; margin-bottom: 1rem;
-    }
-    .account-cta-inner p {
-      font-size: 1rem; color: rgba(255,255,255,.65); margin-bottom: 2rem; line-height: 1.65;
-    }
-    .account-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    /* ── Footer ── */
-    footer {
-      background: #1a1a1a; padding: 2.5rem 2rem;
-    }
-    .footer-bottom {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-      border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem;
-    }
-    .footer-copy { font-size: .8rem; color: rgba(255,255,255,.3); }
-    .footer-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-nav a { font-size: .8rem; color: rgba(255,255,255,.4); transition: color .2s; }
-    .footer-nav a:hover { color: var(--white); }
+    .btn-primary{display:inline-block;background:var(--red);color:var(--white);padding:.85rem 2rem;border-radius:3px;font-size:.95rem;font-weight:700;letter-spacing:.04em;transition:background .2s,transform .15s;cursor:pointer}
+    .btn-primary:hover,.btn-primary:focus-visible{background:var(--red-hover);transform:translateY(-1px)}
+    .btn-ghost{display:inline-block;background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:3px;font-size:.95rem;font-weight:700;letter-spacing:.04em;border:2px solid rgba(255,255,255,.35);transition:border-color .2s,transform .15s;cursor:pointer}
+    .btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--white);transform:translateY(-1px)}
+    .shop-hero{background:linear-gradient(135deg,#1a1a1a 0%,#2b1a1a 60%,#1a1a1a 100%);padding:4rem 2rem 3.5rem;position:relative;overflow:hidden}
+    .shop-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(179,32,37,.15) 0%,transparent 70%);pointer-events:none}
+    .shop-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+    .shop-hero-text .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .shop-hero-text h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1;letter-spacing:.02em}
+    .shop-hero-text p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:50ch;margin-top:.85rem;line-height:1.65}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem}
+    .hero-badges{display:flex;gap:1rem;flex-wrap:wrap}
+    .hero-badge{background:var(--card-bg);border-radius:8px;padding:1.25rem 1.75rem;text-align:center;border:1px solid rgba(255,255,255,.08);flex-shrink:0}
+    .badge-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);line-height:1}
+    .badge-lbl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.35rem}
+    .info-bar{background:var(--red);padding:.75rem 2rem;text-align:center;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .info-bar span{color:rgba(255,255,255,.85);font-weight:400;text-transform:none;letter-spacing:0}
+    .catalog-section{padding:4rem 2rem}
+    .catalog-inner{max-width:1200px;margin:0 auto}
+    .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.03em;line-height:1.05;margin-bottom:.75rem}
+    .section-lead{font-size:1rem;color:rgba(255,255,255,.6);max-width:58ch;line-height:1.65}
+    .cat-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 2.5rem;list-style:none}
+    .cat-btn{background:var(--card-bg);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1);padding:.45rem 1.1rem;border-radius:3px;font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:all .2s}
+    .cat-btn:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
+    .cat-btn.active{background:var(--red);color:var(--white);border-color:var(--red)}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.25rem}
+    .product-card{background:var(--card-bg);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.06);transition:transform .2s,box-shadow .2s}
+    .product-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+    .product-thumb{height:165px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--thumb-grad,#1c1c1c)}
+    .product-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--img-filt,brightness(0.78) saturate(0.9));transition:filter .4s}
+    .product-card:hover .product-thumb img{filter:brightness(0.92) saturate(1.0)}
+    .product-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.55) 100%);pointer-events:none}
+    
+    .product-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
+    .product-name{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.05em;margin-bottom:.4rem;line-height:1.1}
+    .product-desc{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.55;flex:1;margin-bottom:1rem}
+    .product-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1rem}
+    .product-tag{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38);background:rgba(255,255,255,.07);padding:.2rem .5rem;border-radius:2px}
+    .btn-configure{background:transparent;color:var(--red);border:1px solid var(--red);padding:.55rem 1.1rem;border-radius:3px;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;align-self:flex-start;transition:background .2s,color .2s}
+    .btn-configure:hover,.btn-configure:focus-visible{background:var(--red);color:var(--white)}
+    #how{background:var(--card-bg);padding:4.5rem 2rem}
+    .how-inner{max-width:1200px;margin:0 auto}
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2.5rem}
+    .step{text-align:center}
+    .step-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--red);line-height:1}
+    .step-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;margin:.5rem 0 .4rem}
+    .step-desc{font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:420px;max-width:100vw;background:#1e1e1e;z-index:2000;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;box-shadow:-4px 0 32px rgba(0,0,0,.5)}
+    .cart-drawer.open{transform:translateX(0)}
+    .cart-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
+    .cart-drawer-header h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.05em}
+    .cart-count-label{font-size:.78rem;color:var(--gold);font-weight:700;margin-top:.1rem}
+    .cart-close-btn{color:rgba(255,255,255,.45);font-size:1.5rem;line-height:1;padding:.25rem;transition:color .2s}
+    .cart-close-btn:hover{color:var(--white)}
+    .cart-drawer-body{flex:1;overflow-y:auto;padding:1.25rem 1.5rem}
+    .cart-empty{text-align:center;padding:3rem 1rem;color:rgba(255,255,255,.3)}
+    .cart-empty svg{width:48px;height:48px;margin:0 auto 1rem}
+    .cart-empty p{font-size:.88rem;line-height:1.6}
+    .cart-item{background:var(--card-bg);border-radius:4px;padding:1rem;margin-bottom:.75rem;position:relative}
+    .cart-item-name{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.04em;margin-bottom:.3rem;padding-right:1.5rem}
+    .cart-item-specs{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
+    .cart-item-remove{position:absolute;top:.75rem;right:.75rem;color:rgba(255,255,255,.2);font-size:1.1rem;line-height:1;padding:.2rem;transition:color .2s}
+    .cart-item-remove:hover{color:var(--red)}
+    .cart-drawer-footer{padding:1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0}
+    .cart-submit-btn{width:100%;background:var(--red);color:var(--white);padding:1rem;border-radius:3px;border:none;font-size:.95rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:background .2s}
+    .cart-submit-btn:hover{background:var(--red-hover)}
+    .cart-footer-note{font-size:.73rem;color:rgba(255,255,255,.3);text-align:center;margin-top:.65rem;line-height:1.5}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;opacity:0;pointer-events:none;transition:opacity .3s}
+    .overlay.visible{opacity:1;pointer-events:all}
+    .modal{position:fixed;inset:0;z-index:2500;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s}
+    .modal.open{opacity:1;pointer-events:all}
+    .modal-box{background:#1e1e1e;border-radius:8px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 16px 48px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.08)}
+    .modal-header{padding:1.5rem 1.5rem 0;position:relative}
+    .modal-close-btn{position:absolute;top:1rem;right:1rem;color:rgba(255,255,255,.3);font-size:1.5rem;line-height:1;padding:.25rem;transition:color .2s}
+    .modal-close-btn:hover{color:var(--white)}
+    .modal-product-name{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.05em;margin-bottom:.3rem;padding-right:2rem;line-height:1.1}
+    .modal-product-desc{font-size:.84rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1.25rem}
+    .modal-body{padding:0 1.5rem 1.5rem}
+    .form-group{margin-bottom:1.1rem}
+    .form-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.45rem}
+    .form-label .req{color:var(--red);margin-left:2px}
+    .form-input,.form-select,.form-textarea{width:100%;background:var(--card-bg);border:1px solid rgba(255,255,255,.12);color:var(--white);border-radius:3px;padding:.65rem .9rem;font-family:'Archivo',sans-serif;font-size:.9rem;transition:border-color .2s;appearance:none}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--red)}
+    .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .85rem center;padding-right:2.5rem}
+    .form-textarea{resize:vertical;min-height:76px}
+    .size-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.5rem}
+    .size-sep{text-align:center;color:rgba(255,255,255,.25);font-size:1.1rem}
+    .form-hint{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.25rem}
+    .modal-submit{width:100%;background:var(--red);color:var(--white);border:none;padding:.9rem;border-radius:3px;font-size:.95rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:background .2s;margin-top:.25rem}
+    .modal-submit:hover{background:var(--red-hover)}
+    .quote-modal-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+    .quote-modal-title{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.04em;padding-right:2rem;margin-bottom:1.25rem}
+    .order-summary-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:1rem;margin-bottom:1.5rem}
+    .summary-heading{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.65rem}
+    .summary-row{font-size:.82rem;color:rgba(255,255,255,.6);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.5}
+    .summary-row:last-child{border-bottom:none}
+    .summary-row strong{color:var(--white)}
+    footer{background:#1a1a1a;padding:2.5rem 2rem}
+    .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem}
+    .footer-copy{font-size:.8rem;color:rgba(255,255,255,.3)}
+    .footer-nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer-nav a{font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s}
+    .footer-nav a:hover{color:var(--white)}
   </style>
-<script src="https://scripts.api.disqometer.com/desktop_inpage_script.js?nc=NjIyMDIwMDY0ODk1NTU3MjY2MjE2MDg="></script>
 </head>
 <body>
-
 <a href="#main-content" class="skip-link">Skip to main content</a>
-
-<!-- NAV -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="nav-logo" aria-label="Quality Sign &amp; Marquee — home">
     <img src="QualityLogo12.png" alt="Quality Sign &amp; Marquee">
@@ -305,262 +158,318 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html#process">How We Work</a></li>
     <li><a href="index.html#gallery">Work</a></li>
     <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#facility">Facility</a></li>
-    <li><a href="index.html#sustainability">Sustainability</a></li>
     <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li>
+      <button class="nav-cart-btn" id="cart-toggle" aria-label="View cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-badge" id="cart-count" style="display:none">0</span>
+      </button>
+    </li>
     <li><a href="login.html" class="nav-cta">Customer Login</a></li>
   </ul>
 </nav>
-
 <main id="main-content">
-
-<!-- HERO -->
-<section class="shop-hero" aria-label="Shop hero">
+<section class="shop-hero" aria-label="Shop">
   <div class="shop-hero-inner">
     <div class="shop-hero-text">
       <p class="eyebrow">Print &amp; Sign Products</p>
-      <h1>Order Online.<br>Ship Nationwide.</h1>
-      <p>
-        Banners, signs, displays, trade show materials and more — powered by Quality Sign &amp; Marquee and backed by professional print production.
-      </p>
-      <div class="shop-hero-actions">
-        <a href="https://qualitysignandmarquee.bs.run" target="_blank" rel="noopener" class="btn-primary">Enter Store &rarr;</a>
-        <a href="login.html" class="btn-ghost">Customer Login</a>
+      <h1>Build Your<br>Order Online.</h1>
+      <p>Browse our full product catalog, configure your specs, and submit your request — we'll take it from there. Produced in our 50,000 sq ft Covina facility and shipped nationwide.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn-primary">Browse Products</a>
+        <button class="btn-ghost" id="hero-cart-btn">View Cart</button>
       </div>
     </div>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <div class="shop-hero-badge">
-        <div class="badge-number">Same</div>
-        <div class="badge-label">Day Available</div>
-      </div>
-      <div class="shop-hero-badge">
-        <div class="badge-number">Ship</div>
-        <div class="badge-label">Nationwide</div>
-      </div>
-      <div class="shop-hero-badge">
-        <div class="badge-number">50+</div>
-        <div class="badge-label">Products</div>
-      </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><div class="badge-num">50K</div><div class="badge-lbl">Sq Ft Facility</div></div>
+      <div class="hero-badge"><div class="badge-num">50+</div><div class="badge-lbl">Yrs Experience</div></div>
+      <div class="hero-badge"><div class="badge-num">'74</div><div class="badge-lbl">Since</div></div>
     </div>
   </div>
 </section>
-
-<!-- TURNAROUND BAR -->
-<div class="turnaround-bar" role="note">
-  Same-Day Turnaround Available &mdash; <span>Order by 6am PST for same-day shipping &nbsp;|&nbsp; Order by 12pm PST for same-day service &nbsp;|&nbsp; Order by 4pm PST ships next business day</span>
-</div>
-
-<!-- PRODUCTS -->
-<section id="products" class="section-pad" aria-labelledby="products-heading">
-  <div class="section-inner">
+<div class="info-bar" role="note">No account needed &mdash; <span>Browse, configure, and submit your order. We'll follow up with pricing and timeline.</span></div>
+<section id="catalog" class="catalog-section" aria-labelledby="catalog-heading">
+  <div class="catalog-inner">
     <p class="eyebrow">Product Catalog</p>
-    <h2 class="section-title" id="products-heading">What We Print</h2>
-    <p class="section-lead">Professional-grade print products for theatrical marketing, events, retail, and more. All orders backed by QSM's production standards.</p>
-
-    <div class="product-grid">
-
-      <!-- Banners -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="14" rx="1"/><path d="M3 17h18M8 21h8"/>
-        </svg>
-        <h3 class="product-name">Banners</h3>
-        <p class="product-desc">High-impact vinyl and fabric banners for indoor and outdoor use. Multiple materials for every application.</p>
-        <div class="product-items">
-          <span class="product-item">13oz Vinyl</span>
-          <span class="product-item">18oz Blockout</span>
-          <span class="product-item">Backlit</span>
-          <span class="product-item">Mesh</span>
-          <span class="product-item">Indoor</span>
-          <span class="product-item">Pole Banner</span>
-          <span class="product-item">Fabric 9oz</span>
-          <span class="product-item">Tension Fabric</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/banners" target="_blank" rel="noopener" class="card-cta">Order Banners</a>
-      </div>
-
-      <!-- Flags & Banner Stands -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
-        </svg>
-        <h3 class="product-name">Flags &amp; Banner Stands</h3>
-        <p class="product-desc">Advertising flags and portable banner stand systems for events, retail, and theatrical lobbies.</p>
-        <div class="product-items">
-          <span class="product-item">Advertising Flags</span>
-          <span class="product-item">Retractable Stands</span>
-          <span class="product-item">Step &amp; Repeat</span>
-          <span class="product-item">A-Frame Holders</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/advertising-flags" target="_blank" rel="noopener" class="card-cta">Order Flags</a>
-      </div>
-
-      <!-- Trade Show & Events -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        <h3 class="product-name">Trade Show &amp; Events</h3>
-        <p class="product-desc">Complete event display solutions — from custom tents to table throws — for conventions, trade shows, and activations.</p>
-        <div class="product-items">
-          <span class="product-item">Custom Tents</span>
-          <span class="product-item">Table Throws</span>
-          <span class="product-item">Pop-Up Displays</span>
-          <span class="product-item">SEG Products</span>
-          <span class="product-item">Hardware</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/trade-show-products" target="_blank" rel="noopener" class="card-cta">Order Trade Show</a>
-      </div>
-
-      <!-- Rigid Signs -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8M12 3v4"/>
-        </svg>
-        <h3 class="product-name">Rigid Signs &amp; Magnets</h3>
-        <p class="product-desc">Durable rigid substrates for permanent and semi-permanent signage, plus custom magnets for vehicles and display.</p>
-        <div class="product-items">
-          <span class="product-item">Foam Board</span>
-          <span class="product-item">Coroplast</span>
-          <span class="product-item">Aluminum</span>
-          <span class="product-item">Styrene</span>
-          <span class="product-item">Magnets</span>
-          <span class="product-item">Reflective</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/rigid-signs-and-magnets" target="_blank" rel="noopener" class="card-cta">Order Rigid Signs</a>
-      </div>
-
-      <!-- Wall Displays -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-        </svg>
-        <h3 class="product-name">Wall Displays &amp; Murals</h3>
-        <p class="product-desc">Large-format wall art, full wall murals, and adhesive graphics for lobbies, theatres, and retail environments.</p>
-        <div class="product-items">
-          <span class="product-item">Wall Art</span>
-          <span class="product-item">Wall Murals</span>
-          <span class="product-item">Adhesive Vinyl</span>
-          <span class="product-item">Window Cling</span>
-          <span class="product-item">SEG Fabric</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/wall-art" target="_blank" rel="noopener" class="card-cta">Order Wall Displays</a>
-      </div>
-
-      <!-- Large Format -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>
-        <h3 class="product-name">Large Format &amp; Specialty</h3>
-        <p class="product-desc">Posters, canvas, backlit film, dry-erase, and specialty materials for every large-format application.</p>
-        <div class="product-items">
-          <span class="product-item">Posters</span>
-          <span class="product-item">Canvas Roll</span>
-          <span class="product-item">Backlit Film</span>
-          <span class="product-item">Dry Erase</span>
-          <span class="product-item">DTF / UV DTF</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run" target="_blank" rel="noopener" class="card-cta">Order Large Format</a>
-      </div>
-
-      <!-- Real Estate -->
-      <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <h3 class="product-name">Real Estate &amp; Retail</h3>
-        <p class="product-desc">Yard signs, A-frames, Signicade boards, and real estate signage packages for property and retail marketing.</p>
-        <div class="product-items">
-          <span class="product-item">Yard Signs</span>
-          <span class="product-item">Signicade A-Frame</span>
-          <span class="product-item">Sign Holders</span>
-          <span class="product-item">Real Estate Kits</span>
-        </div>
-        <a href="https://qualitysignandmarquee.bs.run/real-estate" target="_blank" rel="noopener" class="card-cta">Order Real Estate</a>
-      </div>
-
-    </div>
+    <h2 class="section-title" id="catalog-heading">What We Print</h2>
+    <p class="section-lead">Professional-grade products for theatrical marketing, events, conventions, and retail. All production in-house.</p>
+    <ul class="cat-filter" role="list" aria-label="Filter by category">
+      <li><button class="cat-btn active" data-cat="all">All</button></li>
+      <li><button class="cat-btn" data-cat="banners">Banners</button></li>
+      <li><button class="cat-btn" data-cat="flags">Flags &amp; Stands</button></li>
+      <li><button class="cat-btn" data-cat="tradeshow">Trade Show</button></li>
+      <li><button class="cat-btn" data-cat="rigid">Rigid Signs</button></li>
+      <li><button class="cat-btn" data-cat="wall">Wall &amp; Large Format</button></li>
+      <li><button class="cat-btn" data-cat="specialty">Specialty</button></li>
+    </ul>
+    <div class="product-grid" id="product-grid" role="list"></div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
-<section id="how" class="section-pad" aria-labelledby="how-heading">
-  <div class="section-inner">
+<section id="how" aria-labelledby="how-heading">
+  <div class="how-inner">
     <p class="eyebrow">How It Works</p>
     <h2 class="section-title" id="how-heading">Order in Four Steps</h2>
     <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3 class="step-title">Create Account</h3>
-        <p class="step-desc">Register or log in to your QSM customer portal to access the full product catalog and pricing.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3 class="step-title">Choose &amp; Configure</h3>
-        <p class="step-desc">Select your product, size, material, and quantity. Upload your artwork or use our design templates.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3 class="step-title">Approve &amp; Pay</h3>
-        <p class="step-desc">Review your proof, approve it, and check out securely. Same-day options available for qualifying orders.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3 class="step-title">Ships to You</h3>
-        <p class="step-desc">Your order is produced and shipped nationwide. Track it in real time through your customer portal.</p>
-      </div>
+      <div class="step"><div class="step-num">01</div><h3 class="step-title">Browse Products</h3><p class="step-desc">Explore our full catalog. Filter by category to find what you need — banners, rigid signs, trade show displays, and more.</p></div>
+      <div class="step"><div class="step-num">02</div><h3 class="step-title">Configure &amp; Add</h3><p class="step-desc">Choose your product, specify size, material, and quantity. Add multiple items to build your complete order.</p></div>
+      <div class="step"><div class="step-num">03</div><h3 class="step-title">Submit Request</h3><p class="step-desc">Review your cart and send it our way. No payment required — your quote request goes directly to our team.</p></div>
+      <div class="step"><div class="step-num">04</div><h3 class="step-title">We Follow Up</h3><p class="step-desc">A QSM team member will respond with pricing, turnaround, and next steps — typically within one business day.</p></div>
     </div>
   </div>
 </section>
-
-<!-- ACCOUNT CTA -->
-<section id="account-cta" aria-label="Account call to action">
-  <div class="account-cta-inner">
-    <p class="eyebrow" style="text-align:center">Ready to Order?</p>
-    <h2>Log In or Create Your Account</h2>
-    <p>Access the full catalog, track orders, and manage your account — all in one place.</p>
-    <div class="account-cta-btns">
-      <a href="login.html" class="btn-primary">Customer Login</a>
-      <a href="https://qualitysignandmarquee.bs.run" target="_blank" rel="noopener" class="btn-ghost">Browse the Store &rarr;</a>
-    </div>
-  </div>
-</section>
-
 </main>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-bottom">
-    <p class="footer-copy">&copy; <span id="footer-year"></span> Quality Sign &amp; Marquee. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2025 Quality Sign &amp; Marquee. All rights reserved.</p>
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="index.html">Home</a>
+      <a href="index.html#gallery">Work</a>
       <a href="index.html#services">Services</a>
-      <a href="shop.html">Shop</a>
-      <a href="login.html">Customer Login</a>
       <a href="index.html#contact">Contact</a>
+      <a href="login.html">Customer Login</a>
     </nav>
   </div>
 </footer>
-
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Your cart">
+  <div class="cart-drawer-header">
+    <div><h2>Your Order</h2><div class="cart-count-label" id="cart-count-label">0 items</div></div>
+    <button class="cart-close-btn" id="cart-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-drawer-body" id="cart-body">
+    <div class="cart-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <p>Your cart is empty.<br>Browse the catalog and add products to get started.</p>
+    </div>
+  </div>
+  <div class="cart-drawer-footer" id="cart-footer" style="display:none">
+    <button class="cart-submit-btn" id="cart-submit-btn">Request Quote</button>
+    <p class="cart-footer-note">No payment required. Our team will send pricing &amp; timeline within 1 business day.</p>
+  </div>
+</div>
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+<!-- CONFIGURE MODAL -->
+<div class="modal" id="config-modal" role="dialog" aria-modal="true" aria-labelledby="config-product-name">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close-btn" id="config-close" aria-label="Close">&times;</button>
+      <div id="config-product-name" class="modal-product-name"></div>
+      <div class="modal-product-desc" id="config-product-desc"></div>
+    </div>
+    <div class="modal-body">
+      <div id="config-fields"></div>
+      <div class="form-group">
+        <label class="form-label" for="config-qty">Quantity<span class="req">*</span></label>
+        <input class="form-input" type="number" id="config-qty" min="1" value="1">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="config-notes">Artwork / Special Instructions</label>
+        <textarea class="form-textarea" id="config-notes" placeholder="File format, colors, special requirements..."></textarea>
+      </div>
+      <button class="modal-submit" id="config-add-btn">Add to Order</button>
+    </div>
+  </div>
+</div>
+<!-- QUOTE MODAL -->
+<div class="modal" id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close-btn" id="quote-close" aria-label="Close">&times;</button>
+      <div class="quote-modal-eyebrow">Almost There</div>
+      <div class="quote-modal-title" id="quote-modal-title">Request a Quote</div>
+    </div>
+    <div class="modal-body">
+      <div class="order-summary-block" id="quote-summary"></div>
+      <div class="form-group"><label class="form-label" for="q-name">Your Name<span class="req">*</span></label><input class="form-input" type="text" id="q-name" placeholder="Jane Smith" required></div>
+      <div class="form-group"><label class="form-label" for="q-company">Company</label><input class="form-input" type="text" id="q-company" placeholder="Studio / Organization"></div>
+      <div class="form-group"><label class="form-label" for="q-email">Email<span class="req">*</span></label><input class="form-input" type="email" id="q-email" placeholder="you@company.com" required></div>
+      <div class="form-group"><label class="form-label" for="q-phone">Phone</label><input class="form-input" type="tel" id="q-phone" placeholder="(626) 555-0100"></div>
+      <div class="form-group"><label class="form-label" for="q-notes">Additional Notes</label><textarea class="form-textarea" id="q-notes" placeholder="Timeline, delivery address, or anything else we should know..."></textarea></div>
+      <button class="modal-submit" id="quote-send-btn">Send Quote Request</button>
+    </div>
+  </div>
+</div>
 <script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.getElementById('nav-links');
-  toggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
+const PRODUCTS=[
+  {id:'vinyl-13oz',filt:'brightness(0.78) saturate(0.9)',cat:'banners',name:'Vinyl Banner 13oz',desc:'Lightweight, versatile standard vinyl banner. Great for indoor and short-term outdoor use.',grad:'linear-gradient(135deg,#1a2a1a,#0d1a0d)',photo:'images/shop/vinyl-13oz.jpg',icon:'<rect x="3" y="6" width="18" height="12" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/>',sizePresets:['2x4 ft','3x6 ft','4x8 ft','4x12 ft','5x10 ft','Custom'],materials:[],finishes:['Hemmed & Grommeted','Pole Pocket Top','Pole Pocket Top & Bottom','No Finishing']},
+  {id:'vinyl-18oz',filt:'brightness(0.78) saturate(0.9)',cat:'banners',name:'Vinyl Banner 18oz',desc:'Heavy-duty vinyl for high-traffic areas, extended outdoor use, and premium applications.',grad:'linear-gradient(135deg,#1a2a1a,#0d1a0d)',photo:'images/shop/vinyl-18oz.jpg',icon:'<rect x="3" y="6" width="18" height="12" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/>',sizePresets:['2x4 ft','3x6 ft','4x8 ft','4x12 ft','6x12 ft','Custom'],materials:[],finishes:['Hemmed & Grommeted','Pole Pocket Top','Pole Pocket Top & Bottom','No Finishing']},
+  {id:'mesh-banner',filt:'brightness(0.78) saturate(0.9)',cat:'banners',name:'Mesh Banner',desc:'Perforated mesh allows wind to pass through — ideal for fences, scaffolding, and outdoor events.',grad:'linear-gradient(135deg,#1a1f2a,#0d1220)',photo:'images/shop/mesh-banner.jpg',icon:'<rect x="3" y="6" width="18" height="12" rx="1"/><line x1="7" y1="6" x2="7" y2="18"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="17" y1="6" x2="17" y2="18"/>',sizePresets:['3x6 ft','4x8 ft','4x12 ft','5x10 ft','6x12 ft','Custom'],materials:[],finishes:['Hemmed & Grommeted','Pole Pocket Top','No Finishing']},
+  {id:'fabric-9oz',filt:'brightness(0.78) saturate(0.9)',cat:'banners',name:'Fabric Banner (9oz)',desc:'Soft, wrinkle-resistant fabric print. Lightweight and packable — perfect for trade shows and events.',grad:'linear-gradient(135deg,#1f1a2a,#120d20)',photo:'images/shop/fabric-9oz.jpg',icon:'<path d="M4 6 Q12 3 20 6 L20 18 Q12 21 4 18 Z"/>',sizePresets:['2x4 ft','3x6 ft','4x8 ft','Custom'],materials:[],finishes:['Sewn Edges','Pole Pocket Top','Pole Pocket Top & Bottom']},
+  {id:'tension-fabric',filt:'brightness(0.78) saturate(0.9)',cat:'banners',name:'Tension Fabric Display',desc:'Stretch fabric over an aluminum frame for a seamless, professional look at any venue.',grad:'linear-gradient(135deg,#1f1a2a,#120d20)',photo:'images/shop/tension-fabric.jpg',icon:'<rect x="4" y="3" width="16" height="18" rx="2"/>',sizePresets:['3x8 ft','4x8 ft','8x8 ft','10x8 ft','Custom'],materials:['Single-Sided','Double-Sided'],finishes:['Frame Included','Print Only']},
+  {id:'adv-flags',filt:'brightness(0.78) saturate(0.9)',cat:'flags',name:'Advertising Flags',desc:'Feather, teardrop, and rectangle flags. Eye-catching and portable for storefronts and events.',grad:'linear-gradient(135deg,#2a1a1a,#200d0d)',photo:'images/shop/adv-flags.jpg',icon:'<path d="M4 21V4"/><path d="M4 4 L20 8 L4 12"/>',sizePresets:['Small (8 ft)','Medium (11 ft)','Large (13 ft)','Extra Large (16 ft)'],materials:['Feather Shape','Teardrop Shape','Rectangle Shape'],finishes:['Ground Spike','X-Base (Indoor)','Weighted Base','Complete Kit']},
+  {id:'retractable-stand',filt:'brightness(0.78) saturate(0.9)',cat:'flags',name:'Retractable Banner Stand',desc:'Roll-up banner stand with durable carry bag. Fast setup, compact storage — a trade show staple.',grad:'linear-gradient(135deg,#2a1a1a,#200d0d)',photo:'images/shop/retractable-stand.jpg',icon:'<rect x="9" y="2" width="6" height="16" rx="1"/><path d="M6 18 L18 18"/>',sizePresets:['24x63 in (Standard)','33x79 in (Wide)','36x84 in (XL)'],materials:['Economy Stand','Premium Stand'],finishes:['Print + Stand Bundle','Print Only']},
+  {id:'step-repeat',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'Step & Repeat Banner',desc:'The classic photo backdrop with repeating logos. Used at premieres, press events, and conventions.',grad:'linear-gradient(135deg,#0d1a2a,#060d1a)',photo:'images/shop/step-repeat.jpg',icon:'<rect x="2" y="3" width="20" height="18" rx="1"/><line x1="8" y1="3" x2="8" y2="21"/><line x1="14" y1="3" x2="14" y2="21"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="2" y1="16" x2="22" y2="16"/>',sizePresets:['8x8 ft','8x10 ft','8x12 ft','10x8 ft','10x10 ft','Custom'],materials:['Vinyl 13oz','Fabric'],finishes:['Stand Included','Print Only']},
+  {id:'a-frame',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'A-Frame Sidewalk Sign',desc:'Double-sided A-frame with snap-in graphic inserts. Portable and weather-resistant for any entrance.',grad:'linear-gradient(135deg,#1a1a2a,#0d0d1f)',photo:'images/shop/a-frame.jpg',icon:'<path d="M12 3 L3 21 M12 3 L21 21 M6 15 L18 15"/>',sizePresets:['18x24 in','24x36 in'],materials:['Corrugated Plastic','Foam Board'],finishes:['Frame + Insert','Insert Only']},
+  {id:'custom-tents',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'Custom Canopy Tents',desc:'Full-color branded canopy tents for outdoor events, activations, and conventions.',grad:'linear-gradient(135deg,#0d2a1a,#061a0d)',photo:'images/shop/custom-tents.jpg',icon:'<path d="M2 19 L12 3 L22 19 Z"/><line x1="2" y1="19" x2="22" y2="19"/>',sizePresets:['10x10 ft','10x15 ft','10x20 ft'],materials:['Economy Frame','Premium Aluminum Frame'],finishes:['Full Bleed Print','Single Color Print']},
+  {id:'table-throws',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'Table Throws',desc:'Custom-printed fitted or draped table covers. Fully branded table presentation for any event.',grad:'linear-gradient(135deg,#1a0d2a,#120620)',photo:'images/shop/table-throws.jpg',icon:'<rect x="2" y="8" width="20" height="2" rx="1"/><path d="M4 10 L4 20 Q4 22 6 22 L18 22 Q20 22 20 20 L20 10"/>',sizePresets:['4 ft Table','6 ft Table','8 ft Table'],materials:['Polyester Fabric','Vinyl'],finishes:['Fitted (Full Cover)','Draped (3-sided)','Draped (4-sided)']},
+  {id:'popup-displays',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'Pop-Up Displays',desc:'Curved or straight pop-up frames with fabric or graphic panels. Quick setup for trade show booths.',grad:'linear-gradient(135deg,#0d1a2a,#06100f)',photo:'images/shop/popup-displays.jpg',icon:'<path d="M3 5 Q12 2 21 5 L21 19 Q12 22 3 19 Z"/>',sizePresets:['6 ft (3-panel)','8 ft (4-panel)','10 ft (5-panel)'],materials:['Fabric Panels','Graphic Panels'],finishes:['Frame + Graphics','Graphics Only']},
+  {id:'seg-products',filt:'brightness(0.78) saturate(0.9)',cat:'tradeshow',name:'SEG Displays',desc:'Silicone Edge Graphics snap into aluminum frames for a perfectly flat, borderless presentation.',grad:'linear-gradient(135deg,#1a1a1a,#0f0f0f)',photo:'images/shop/seg-products.jpg',icon:'<rect x="3" y="3" width="18" height="18" rx="1"/><rect x="6" y="6" width="12" height="12" rx="1"/>',sizePresets:['3x8 ft','4x8 ft','8x8 ft','10x10 ft','Custom'],materials:['Single-Sided','Double-Sided'],finishes:['Frame + SEG Print','SEG Print Only']},
+  {id:'coroplast',filt:'brightness(0.78) saturate(0.9)',cat:'rigid',name:'Corrugated Plastic Signs',desc:'Lightweight, weatherproof coroplast signs for yard, window, and short-term outdoor applications.',grad:'linear-gradient(135deg,#2a200a,#1a1205)',photo:'images/shop/coroplast.jpg',icon:'<rect x="2" y="6" width="20" height="12" rx="1"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="14" y1="6" x2="14" y2="18"/>',sizePresets:['18x24 in','24x36 in','24x48 in','36x48 in','Custom'],materials:['4mm Coroplast','6mm Coroplast'],finishes:['Single-Sided','Double-Sided']},
+  {id:'foam-board',filt:'brightness(0.78) saturate(0.9)',cat:'rigid',name:'Foam Board Signs',desc:'Lightweight foam core board for indoor displays, presentations, and retail point-of-sale.',grad:'linear-gradient(135deg,#2a200a,#1a1205)',photo:'images/shop/foam-board.jpg',icon:'<rect x="3" y="5" width="18" height="14" rx="1"/>',sizePresets:['11x14 in','18x24 in','24x36 in','36x48 in','Custom'],materials:['3/16" Foam Board','1/2" Foam Board'],finishes:['Matte Laminate','Gloss Laminate','No Laminate']},
+  {id:'aluminum-signs',filt:'brightness(0.78) saturate(0.9)',cat:'rigid',name:'Aluminum Signs',desc:'Durable aluminum substrate for long-term indoor and outdoor signage.',grad:'linear-gradient(135deg,#1a1f2a,#0d1220)',photo:'images/shop/aluminum-signs.jpg',icon:'<rect x="2" y="6" width="20" height="12" rx="1"/><circle cx="5" cy="9" r="1"/><circle cx="5" cy="15" r="1"/><circle cx="19" cy="9" r="1"/><circle cx="19" cy="15" r="1"/>',sizePresets:['12x18 in','18x24 in','24x36 in','36x48 in','Custom'],materials:['.040 Aluminum','.063 Aluminum'],finishes:['Matte','Gloss','Brushed']},
+  {id:'vehicle-magnets',filt:'brightness(0.78) saturate(0.9)',cat:'rigid',name:'Vehicle Magnets',desc:'High-strength magnetic signs for vehicles. Easy on, easy off — advertise anywhere you drive.',grad:'linear-gradient(135deg,#2a1a0a,#1a0d05)',photo:'images/shop/vehicle-magnets.jpg',icon:'<rect x="2" y="6" width="20" height="12" rx="1"/>',sizePresets:['12x18 in','12x24 in','18x24 in','24x24 in','Custom'],materials:['30 mil Magnet'],finishes:['Matte Laminate','Gloss Laminate']},
+  {id:'canvas-print',filt:'brightness(0.78) saturate(0.9)',cat:'wall',name:'Canvas Prints',desc:'Gallery-quality canvas prints stretched over wood frames. Ideal for offices, lobbies, and events.',grad:'linear-gradient(135deg,#2a1f0d,#1a1206)',photo:'images/shop/canvas-print.jpg',icon:'<rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/>',sizePresets:['16x20 in','20x24 in','24x36 in','30x40 in','Custom'],materials:['1.5" Gallery Wrap','2" Deep Gallery Wrap'],finishes:['Matte Canvas','Gloss Canvas']},
+  {id:'dry-erase',filt:'brightness(0.78) saturate(0.9)',cat:'specialty',name:'Dry Erase / Acrylic Boards',desc:'Custom printed dry erase boards and branded acrylic display panels for offices and events.',grad:'linear-gradient(135deg,#0d1f1a,#060f0d)',photo:'images/shop/dry-erase.jpg',icon:'<rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 17 L16 9"/><path d="M14 9 L16 9 L16 11"/>',sizePresets:['18x24 in','24x36 in','36x48 in','48x72 in','Custom'],materials:['Dry Erase Board','Clear Acrylic','White Acrylic'],finishes:['Printed Background','Blank (No Print)']}
+];
+let cart=[];
+let currentProduct=null;
+function renderGrid(filter){
+  const grid=document.getElementById('product-grid');
+  grid.innerHTML='';
+  const list=filter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===filter);
+  list.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='product-card';
+    card.setAttribute('role','listitem');
+    const tags=[...p.materials.slice(0,2),...p.finishes.slice(0,1)].map(t=>`<span class="product-tag">${t}</span>`).join('');
+    card.innerHTML=`<div class="product-thumb" style="--thumb-grad:${p.grad};--img-filt:${p.filt}"><img src="${p.photo}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></div><div class="product-body"><div class="product-name">${p.name}</div><div class="product-desc">${p.desc}</div><div class="product-tags">${tags}</div><button class="btn-configure" data-id="${p.id}">Configure &amp; Add</button></div>`;
+    grid.appendChild(card);
   });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+  grid.querySelectorAll('.btn-configure').forEach(btn=>{
+    btn.addEventListener('click',()=>openConfigModal(btn.dataset.id));
   });
+}
+document.querySelectorAll('.cat-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGrid(btn.dataset.cat);
+  });
+});
+const overlay=document.getElementById('overlay');
+function showOverlay(){overlay.classList.add('visible')}
+function hideOverlay(){overlay.classList.remove('visible')}
+function openModal(id){document.getElementById(id).classList.add('open');showOverlay();document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('open');if(!document.querySelector('.modal.open')&&!document.getElementById('cart-drawer').classList.contains('open')){hideOverlay();document.body.style.overflow=''}}
+overlay.addEventListener('click',()=>{closeModal('config-modal');closeModal('quote-modal');closeCart()});
+function openConfigModal(id){
+  currentProduct=PRODUCTS.find(p=>p.id===id);
+  if(!currentProduct)return;
+  const p=currentProduct;
+  document.getElementById('config-product-name').textContent=p.name;
+  document.getElementById('config-product-desc').textContent=p.desc;
+  document.getElementById('config-qty').value=1;
+  document.getElementById('config-notes').value='';
+  const fields=document.getElementById('config-fields');
+  fields.innerHTML='';
+  if(p.sizePresets.length){
+    const isCustomOnly=p.sizePresets.length===1&&(p.sizePresets[0].startsWith('Custom'));
+    const hasCustom=!isCustomOnly&&p.sizePresets.includes('Custom');
+    if(isCustomOnly){
+      fields.innerHTML+=`<div class="form-group"><label class="form-label">Size (inches)<span class="req">*</span></label><div class="size-row"><input class="form-input" type="number" id="cfg-w" placeholder="Width" min="1"><div class="size-sep">x</div><input class="form-input" type="number" id="cfg-h" placeholder="Height" min="1"></div><div class="form-hint">Enter dimensions in inches</div></div>`;
+    } else {
+      const opts=p.sizePresets.map(s=>`<option value="${s}">${s}</option>`).join('');
+      fields.innerHTML+=`<div class="form-group"><label class="form-label" for="cfg-size">Size<span class="req">*</span></label><select class="form-select" id="cfg-size">${opts}</select></div>`;
+      if(hasCustom){
+        fields.innerHTML+=`<div class="form-group" id="custom-size-group" style="display:none"><label class="form-label">Custom Size (inches)</label><div class="size-row"><input class="form-input" type="number" id="cfg-w" placeholder="Width" min="1"><div class="size-sep">x</div><input class="form-input" type="number" id="cfg-h" placeholder="Height" min="1"></div></div>`;
+        setTimeout(()=>{const sel=document.getElementById('cfg-size');if(sel)sel.addEventListener('change',()=>{const grp=document.getElementById('custom-size-group');if(grp)grp.style.display=sel.value==='Custom'?'':'none'})},50);
+      }
+    }
+  }
+  if(p.materials.length){
+    const opts=p.materials.map(m=>`<option value="${m}">${m}</option>`).join('');
+    fields.innerHTML+=`<div class="form-group"><label class="form-label" for="cfg-mat">Material<span class="req">*</span></label><select class="form-select" id="cfg-mat">${opts}</select></div>`;
+  }
+  if(p.finishes.length){
+    const opts=p.finishes.map(f=>`<option value="${f}">${f}</option>`).join('');
+    fields.innerHTML+=`<div class="form-group"><label class="form-label" for="cfg-fin">Finish / Option<span class="req">*</span></label><select class="form-select" id="cfg-fin">${opts}</select></div>`;
+  }
+  openModal('config-modal');
+}
+document.getElementById('config-close').addEventListener('click',()=>closeModal('config-modal'));
+document.getElementById('config-add-btn').addEventListener('click',()=>{
+  if(!currentProduct)return;
+  const p=currentProduct;
+  const qty=parseInt(document.getElementById('config-qty').value)||1;
+  const notes=document.getElementById('config-notes').value.trim();
+  let specs={};
+  const sizeSel=document.getElementById('cfg-size');
+  const wInput=document.getElementById('cfg-w');
+  const hInput=document.getElementById('cfg-h');
+  if(sizeSel){specs.size=sizeSel.value==='Custom'&&wInput&&hInput?`Custom: ${wInput.value}" x ${hInput.value}"`:sizeSel.value}
+  else if(wInput&&hInput){specs.size=`${wInput.value}" x ${hInput.value}"`}
+  const matSel=document.getElementById('cfg-mat');
+  if(matSel)specs.material=matSel.value;
+  const finSel=document.getElementById('cfg-fin');
+  if(finSel)specs.finish=finSel.value;
+  if(notes)specs.notes=notes;
+  cart.push({product:p,qty,specs,id:Date.now()});
+  closeModal('config-modal');
+  updateCart();
+  openCart();
+});
+function openCart(){document.getElementById('cart-drawer').classList.add('open');showOverlay();document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cart-drawer').classList.remove('open');if(!document.querySelector('.modal.open')){hideOverlay();document.body.style.overflow=''}}
+document.getElementById('cart-toggle').addEventListener('click',openCart);
+document.getElementById('hero-cart-btn').addEventListener('click',openCart);
+document.getElementById('cart-close').addEventListener('click',closeCart);
+function updateCart(){
+  const body=document.getElementById('cart-body');
+  const footer=document.getElementById('cart-footer');
+  const badge=document.getElementById('cart-count');
+  const label=document.getElementById('cart-count-label');
+  badge.textContent=cart.length;
+  badge.style.display=cart.length?'flex':'none';
+  label.textContent=`${cart.length} item${cart.length!==1?'s':''}`;
+  footer.style.display=cart.length?'':'none';
+  if(!cart.length){body.innerHTML=`<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Your cart is empty.<br>Browse the catalog and add products to get started.</p></div>`;return}
+  body.innerHTML=cart.map(item=>{
+    const specLines=Object.entries(item.specs).map(([k,v])=>`${k.charAt(0).toUpperCase()+k.slice(1)}: ${v}`).join('<br>');
+    return`<div class="cart-item"><div class="cart-item-name">${item.product.name}</div><div class="cart-item-specs">Qty: ${item.qty}<br>${specLines}</div><button class="cart-item-remove" data-id="${item.id}" aria-label="Remove">&times;</button></div>`;
+  }).join('');
+  body.querySelectorAll('.cart-item-remove').forEach(btn=>{
+    btn.addEventListener('click',()=>{cart=cart.filter(i=>i.id!==parseInt(btn.dataset.id));updateCart()});
+  });
+}
+document.getElementById('cart-submit-btn').addEventListener('click',()=>{closeCart();openQuoteModal()});
+function openQuoteModal(){
+  const summary=document.getElementById('quote-summary');
+  summary.innerHTML=`<div class="summary-heading">Order Summary (${cart.length} item${cart.length!==1?'s':''})</div>`+cart.map(item=>{
+    const size=item.specs.size||'';const mat=item.specs.material||'';const fin=item.specs.finish||'';
+    const detail=[size,mat,fin].filter(Boolean).join(' · ');
+    return`<div class="summary-row"><strong>${item.product.name}</strong>${detail?' — '+detail:''} &nbsp;x&nbsp;${item.qty}</div>`;
+  }).join('');
+  ['q-name','q-company','q-email','q-phone','q-notes'].forEach(id=>{document.getElementById(id).value=''});
+  openModal('quote-modal');
+}
+document.getElementById('quote-close').addEventListener('click',()=>closeModal('quote-modal'));
+document.getElementById('quote-send-btn').addEventListener('click',()=>{
+  const name=document.getElementById('q-name').value.trim();
+  const email=document.getElementById('q-email').value.trim();
+  if(!name||!email){alert('Please enter your name and email.');return}
+  const company=document.getElementById('q-company').value.trim();
+  const phone=document.getElementById('q-phone').value.trim();
+  const notes=document.getElementById('q-notes').value.trim();
+  let body=`QUOTE REQUEST — Quality Sign & Marquee\n${'='.repeat(40)}\n\nName: ${name}\n`;
+  if(company)body+=`Company: ${company}\n`;
+  body+=`Email: ${email}\n`;
+  if(phone)body+=`Phone: ${phone}\n`;
+  body+=`\nORDER ITEMS:\n${'-'.repeat(30)}\n`;
+  cart.forEach((item,i)=>{
+    body+=`\n${i+1}. ${item.product.name}\n   Quantity: ${item.qty}\n`;
+    Object.entries(item.specs).forEach(([k,v])=>{body+=`   ${k.charAt(0).toUpperCase()+k.slice(1)}: ${v}\n`});
+  });
+  if(notes)body+=`\nAdditional Notes:\n${notes}\n`;
+  body+=`\n${'='.repeat(40)}\nSent from qualitysignandmarquee.com/shop.html`;
+  const subj=encodeURIComponent(`Quote Request from ${name}${company?' — '+company:''}`);
+  window.location.href=`mailto:stephen@qualitysignandmarquee.com?subject=${subj}&body=${encodeURIComponent(body)}`;
+  closeModal('quote-modal');
+  cart=[];
+  updateCart();
+});
+const navToggle=document.querySelector('.nav-toggle');
+const navLinks=document.getElementById('nav-links');
+navToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');navToggle.setAttribute('aria-expanded',open)});
+renderGrid('all');
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
